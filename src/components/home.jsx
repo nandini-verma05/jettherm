@@ -11,23 +11,27 @@ import Scope from './scope';
 import WorkProcess from './work';
 import Gallery from './gallery';
 import ContactForm from './contact';
-import Client from './clients';
+import Blogs from './Blogs';
+import Clients from './Clients';
+
 const Home = () => {
   return (
     <div> 
+      
       <Banner />
       <Services  />
 
       <About />
+      
 <CardsContainer />
     
       <Scope />
       <WorkProcess /> 
       <Gallery/>
-      
+      <Clients />
       <SideMenu />
       <SlidingCards className="mb-28" /> 
-      <Client />
+      <Blogs />
       <ContactForm/>
       <Footer />
     </div>

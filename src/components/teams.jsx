@@ -49,7 +49,7 @@ const SlidingCards = () => {
   };
 
   return (
-    <div className="relative w-full max-w-6xl mx-auto mb-24 mt-24">
+    <div className="relative w-full max-w-6xl mx-auto mb-24 mt-24 overflow-hidden">
       <FontAwesomeIcon
         icon={faUserFriends}
         className="w-12 h-8 mx-auto mb-2 text-blue-500 block"
@@ -93,11 +93,6 @@ const SlidingCards = () => {
         ))}
       </div>
 
-      <style jsx>{`
-        .perspective-1000 {
-          perspective: 1000px;
-        }
-      `}</style>
     </div>
   );
 };

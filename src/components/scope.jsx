@@ -1,25 +1,44 @@
 import React from 'react';
-import { Building2, Wrench, Zap } from 'lucide-react';
-import img from './assets/pic2.png';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCogs } from '@fortawesome/free-solid-svg-icons';
+import { Building2, Wrench, Zap, ChevronRight } from 'lucide-react';
 
-const ScopeCard = ({ title, items, icon }) => (
-  <div className="bg-white/90 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ">
-    <div className="p-6 border-b border-gray-200">
-      <h3 className="text-xl font-semibold flex items-center gap-2 text-gray-700">
-        {React.cloneElement(icon, { className: "h-6 w-6 text-blue-600" })}
-        <span>{title}</span>
-      </h3>
+const ScopeCard = ({ title, items, icon, index }) => (
+  <div className={`flex items-center gap-8 ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} w-full max-w-4xl mx-auto`}>
+    {/* Icon Section */}
+    <div className="relative shrink-0">
+      <div className="absolute -inset-2 bg-blue-500/20 rounded-full blur-xl" />
+      <div className="relative w-20 h-20 bg-white rounded-full shadow-lg flex items-center justify-center">
+        {React.cloneElement(icon, { 
+          className: "w-10 h-10 text-blue-600" 
+        })}
+      </div>
+      
+      {/* Connector Line */}
+      {index !== 2 && (
+        <div className="absolute top-full left-1/2 w-1 h-24 bg-gradient-to-b from-blue-500 to-transparent -translate-x-1/2" />
+      )}
     </div>
-    <div className="p-6">
-      <ul className="list-disc list-inside space-y-3 text-gray-600">
-        {items.map((item, index) => (
-          <li key={index} className="leading-relaxed">
-            {item}
-          </li>
-        ))}
-      </ul>
+
+    {/* Content Card */}
+    <div className="group flex-1 bg-white/95 backdrop-blur-md rounded-xl shadow-lg p-6 relative">
+      {/* Decorative arrow */}
+      <div className={`absolute top-1/2 -translate-y-1/2 ${
+        index % 2 === 0 ? '-left-3' : '-right-3'
+      } w-6 h-6 bg-white transform rotate-45`} />
+      
+      <div className="relative">
+        <h3 className="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+          <span>{title}</span>
+        </h3>
+        
+        <ul className="space-y-3">
+          {items.map((item, idx) => (
+            <li key={idx} className="flex items-start gap-3">
+              <ChevronRight className="w-5 h-5 text-blue-500 mt-0.5 shrink-0" />
+              <span className="text-gray-600">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   </div>
 );
@@ -55,34 +74,29 @@ const Scope = () => {
   ];
 
   return (
-    <div className="relative py-16 min-h-screen mb-16 mt-48">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src={img}
-          alt="Background"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 to-gray-900/80 backdrop-blur-sm" />
-      </div>
-
-      <div className="container mx-auto px-4 max-w-6xl relative z-10">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-        <FontAwesomeIcon icon={faCogs} className="text-2xl w-12 h-12 text-primary text-blue-500" />
-          <h2 className="text-4xl font-bold text-white mb-4">Our Scope of Work</h2>
-          <p className="text-gray-200 max-w-2xl mx-auto">
+    <div className="relative py-24 min-h-screen">
+      {/* Background with multiple gradients for a more interesting effect */}
+      
+      <div className="container mx-auto px-6 relative z-10">
+        {/* Header */}
+        <div className="text-center mb-24">
+          <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-blue-600/10 mb-8">
+            <Wrench className="w-10 h-10 text-blue-500" />
+          </div>
+          
+          <h2 className="text-5xl font-bold text-black mb-6">
+            Our Scope of Work
+          </h2>
+          
+          <p className="text-lg text-grey-700 max-w-2xl mx-auto">
             Comprehensive solutions across civil, mechanical, and electrical domains
           </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-400 via-blue-500 to-blue-400 mx-auto mt-4 rounded-full" />
         </div>
 
-        {/* Scopes Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Zigzag Layout */}
+        <div className="space-y-16">
           {scopes.map((scope, index) => (
-            <div key={index} className="transform hover:-translate-y-1 transition-transform duration-300">
-              <ScopeCard {...scope} />
-            </div>
+            <ScopeCard key={index} {...scope} index={index} />
           ))}
         </div>
       </div>
