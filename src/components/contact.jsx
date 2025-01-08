@@ -128,6 +128,7 @@ const ContactForm = () => {
   );
 
   return (
+    <section id="contact">
     <div className="min-h-screen w-full bg-gradient-to-b from-blue-100 to-white p-6 relative">
       <WaveBackground />
       
@@ -265,6 +266,7 @@ const ContactForm = () => {
         </div>
       </div>
     </div>
+    </section>
   );
 };
 

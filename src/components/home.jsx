@@ -1,11 +1,9 @@
-import React from 'react';
 import Footer from './footer';
 import SlidingCards from './teams';
 import CardsContainer from './members';
 import About from './about';
 import SideMenu from './floatingMenu';
 import Banner from './Banner';
-
 import Services from './services';
 import Scope from './scope';
 import WorkProcess from './work';
@@ -15,26 +13,30 @@ import Blogs from './Blogs';
 import Clients from './Clients';
 
 const Home = () => {
-  return (
-    <div> 
-      
-      <Banner />
-      <Services  />
 
+  
+
+  return (
+    <section id="home">
+    <div>
+    <Banner />
+     
       <About />
-      
-<CardsContainer />
-    
-      <Scope />
-      <WorkProcess /> 
-      <Gallery/>
       <Clients />
+      <Services />
+      <WorkProcess />
+      <Scope />
+      <CardsContainer />
+      <SlidingCards />
+      <Gallery />
       <SideMenu />
-      <SlidingCards className="mb-28" /> 
       <Blogs />
-      <ContactForm/>
+      <ContactForm />
       <Footer />
     </div>
+    
+    </section>
+
   );
 };
 

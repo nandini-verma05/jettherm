@@ -27,7 +27,7 @@ const Banner = () => {
   }, []);
 
   return (
-    <div className="relative h-screen overflow-hidden">
+    <div className="sticky h-screen overflow-hidden">
       {/* Background Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/60 z-10" />
 

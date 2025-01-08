@@ -49,6 +49,7 @@ const SlidingCards = () => {
   };
 
   return (
+    <section id="team">
     <div className="relative w-full max-w-6xl mx-auto mb-24 mt-24 overflow-hidden">
       <FontAwesomeIcon
         icon={faUserFriends}
@@ -94,6 +95,7 @@ const SlidingCards = () => {
       </div>
 
     </div>
+    </section>
   );
 };
 

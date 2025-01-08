@@ -1,5 +1,6 @@
 import React from "react";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faNewspaper } from '@fortawesome/free-solid-svg-icons';
 // Service data array
 const data = [
   {
@@ -79,8 +80,12 @@ const data = [
 
 const Blogs= () => {
   return (
+    <section id="blogs">
     <div className="container mx-auto px-4 py-16">
-      <h2 className="text-3xl font-bold text-center mb-8">Blogs</h2>
+       <div className="flex justify-center mb-4"> 
+    <FontAwesomeIcon icon={faNewspaper} className="text-blue-500 w-12 h-12" />
+  </div>
+      <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">Blogs</h2>
       <div className="w-48 h-1 bg-gradient-to-r from-blue-400 via-blue-600 to-blue-400 mx-auto mt-4 mb-12 rounded-full" />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -105,6 +110,7 @@ const Blogs= () => {
         ))}
       </div>
     </div>
+    </section>
   );
 };
 

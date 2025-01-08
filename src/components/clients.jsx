@@ -13,10 +13,11 @@ const logos = [
 
 const Clients = () => {
   return (
-    <section className="py-12 bg-white overflow-hidden">
-      <div className="container mx-auto px-4 py-16">
-        <h2 className="text-3xl font-bold text-center mb-8"> Our Clients</h2>
-        <div className="w-48 h-1 bg-gradient-to-r from-blue-400 via-blue-600 to-blue-400 mx-auto mt-4 mb-12 rounded-full" />
+    <section id="clients">
+    <section className="py-8 overflow-hidden">
+      <div className="container mx-auto px-4 ">
+        <h2 className="text-3xl font-bold text-center text-black mb-4"> Our Clients</h2>
+        <div className="w-48 h-1 bg-gradient-to-r from-blue-400 via-blue-600 to-blue-400 mx-auto mt-4 mb-4 rounded-full" />
 
         <div className="container mx-auto px-4">
           <div className="flex flex-nowrap items-center justify-start space-x-8 animate-marquee pb-4">
@@ -46,6 +47,7 @@ const Clients = () => {
           </div>
         </div>
       </div>
+    </section>
     </section>
   );
 };
