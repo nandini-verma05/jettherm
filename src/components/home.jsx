@@ -17,51 +17,52 @@ const Home = () => {
   return (
     <section id="home">
       <div>
-        <AnimationWrapper direction="bottom">
+       
           <Banner />
-        </AnimationWrapper>
+        
 
         <AnimationWrapper direction="left" delay={0.1}>
           <About />
         </AnimationWrapper>
-
-        <AnimationWrapper direction="right" delay={0.2}>
-          <Clients />
+        <Clients />
+        
+        <AnimationWrapper direction="bottom" >
+          <CardsContainer />
         </AnimationWrapper>
-
-        <AnimationWrapper direction="bottom" delay={0.3}>
-          <Services />
+        <AnimationWrapper direction="right" >
+          <Scope />
         </AnimationWrapper>
-
-        <AnimationWrapper direction="left" delay={0.4}>
+        <AnimationWrapper direction="left" delay={0.2}>
           <WorkProcess />
         </AnimationWrapper>
 
-        <AnimationWrapper direction="right" delay={0.5}>
-          <Scope />
+        
+       
+
+        <AnimationWrapper direction="bottom" delay={0.2}>
+          <Services />
         </AnimationWrapper>
 
-        <AnimationWrapper direction="bottom" delay={0.5}>
-          <CardsContainer />
-        </AnimationWrapper>
+        
 
-        <AnimationWrapper direction="left" delay={0.5}>
+        
+
+
+       
           <SlidingCards />
-        </AnimationWrapper>
+       
 
-        <AnimationWrapper direction="right" delay={0.5}>
+        
           <Gallery />
-        </AnimationWrapper>
+      
 
-        <AnimationWrapper direction="bottom" delay={0.5}>
           <SideMenu />
-        </AnimationWrapper>
+       
 
-        <AnimationWrapper direction="left" delay={0.5}>
           <Blogs />
-        </AnimationWrapper>
+       
 
-        <AnimationWrapper direction="right" delay={0.5}>
+        <AnimationWrapper direction="bottom" >
           <ContactForm />
         </AnimationWrapper>
 

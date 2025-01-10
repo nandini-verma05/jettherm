@@ -1,112 +1,188 @@
-// src/components/About/WhyChooseUs.jsx
-import React, { useEffect, useRef } from 'react';
-import {
-  Clock,
-  Users,
-  Briefcase,
-  CheckCircle,
-  DollarSign,
-  Building2,
-} from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { Clock, Users, Briefcase, CheckCircle, DollarSign, Building2 } from 'lucide-react';
+
+const WaveBackground = () => (
+  <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    {/* Top wave */}
+    <svg 
+      className="absolute top-0 w-full h-48 text-blue-100 transform rotate-180"
+      viewBox="0 0 1440 320" 
+      preserveAspectRatio="none"
+     
+    >
+      <path 
+        fill="currentColor" 
+        fillOpacity="1" 
+        d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+      />
+    </svg>
+    
+    
+    {/* Bottom wave */}
+    <svg 
+      className="absolute bottom-0 w-full h-48 text-blue-100"
+      viewBox="0 0 1440 320" 
+      preserveAspectRatio="none"
+    >
+      <path 
+        fill="currentColor" 
+        fillOpacity="1" 
+        d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+      />
+    </svg>
+   
+  </div>
+);
 
 const CircularFeatureLayout = ({ features }) => {
-  const featureRefs = useRef([]);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.style.opacity = 1;
-            entry.target.style.animationPlayState = 'running';
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    featureRefs.current.forEach((el) => el && observer.observe(el));
-
-    return () => observer.disconnect();
-  }, []);
-
+  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 0);
+  const [isVisible, setIsVisible] = useState(false);
   const centerX = 50;
   const centerY = 50;
 
-  const getRadius = () => (window?.innerWidth < 768 ? 25 : 35);
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    
+    const timer = setTimeout(() => setIsVisible(true), 100);
+    
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      clearTimeout(timer);
+    };
+  }, []);
+
+  const getResponsiveRadius = () => {
+    if (windowWidth < 640) return 32;
+    if (windowWidth < 768) return 34;
+    if (windowWidth < 1024) return 36;
+    return 30;
+  };
 
   const getPosition = (index) => {
-    const radius = getRadius();
     const totalFeatures = features.length;
     const angle = (index * (360 / totalFeatures) - 90) * (Math.PI / 180);
+    const radius = getResponsiveRadius();
     return {
       x: centerX + radius * Math.cos(angle),
       y: centerY + radius * Math.sin(angle),
     };
   };
 
-  return (
-    <div className="relative w-full min-h-[600px] lg:min-h-[800px] mx-auto my-12 lg:my-24">
-      <svg className="absolute inset-0 w-full h-full -z-10 hidden md:block">
-        <circle
-          cx={`${centerX}%`}
-          cy={`${centerY}%`}
-          r={`${getRadius()}%`}
-          fill="none"
-          stroke="blue"
-          strokeWidth="24"
-        />
-      </svg>
+  const getCenterCircleSize = () => {
+    if (windowWidth < 640) return 'w-20 h-20';
+    if (windowWidth < 768) return 'w-24 h-24';
+    if (windowWidth < 1024) return 'w-28 h-28';
+    return 'w-32 h-32';
+  };
 
-      <div className="absolute left-1/2 top-0 lg:top-1/2 -translate-x-1/2 lg:-translate-y-1/2 z-20">
-        <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-full w-32 h-32 flex items-center justify-center shadow-xl">
-          <h3 className="text-xl font-bold text-white text-center p-4">Why Choose Us?</h3>
+  const getCardWidth = () => {
+    if (windowWidth < 640) return 'w-28';
+    if (windowWidth < 768) return 'w-32';
+    if (windowWidth < 1024) return 'w-36';
+    return 'w-40';
+  };
+
+  const outerCircleRadius = getResponsiveRadius();
+  const centerCircleSize = getCenterCircleSize();
+  const cardWidth = getCardWidth();
+
+  const circumference = 2 * Math.PI * outerCircleRadius;
+
+  return (
+    <div className="  w-full relative w-full max-w-full mx-auto bg-blue-50  p-8 overflow-hidden">
+        {/* <div className="w-full relative max-w-full mx-auto bg-blue-50 p-8 overflow-hidden"></div> */}
+      <WaveBackground />
+      
+      <div className="aspect-square relative w-full h-full">
+        {/* Outer Circle */}
+        <svg 
+          className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full" 
+          viewBox="0 0 100 100" 
+          preserveAspectRatio="xMidYMid meet"
+        >
+          <circle
+            cx={centerX}
+            cy={centerY}
+            r={outerCircleRadius}
+            fill="none"
+            stroke="#A3B9FF"
+            strokeWidth="4"
+            strokeDasharray={circumference}
+            strokeDashoffset={isVisible ? 0 : circumference}
+            className="transition-all duration-1000 ease-out"
+          />
+        </svg>
+
+        {/* Central Circle */}
+        <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+          <div 
+            className={`${centerCircleSize} bg-white border border-blue-600 rounded-full flex items-center justify-center shadow-lg backdrop-blur-sm
+              ${isVisible ? 'scale-100 opacity-100' : 'scale-50 opacity-0'} 
+              transition-all duration-700 ease-out`}
+          >
+            <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-blue-800 text-center px-2">
+              Why Us?
+            </h3>
+          </div>
+        </div>
+
+        {/* Feature Cards */}
+        <div className="absolute inset-0 z-20">
+          {features.map((feature, index) => {
+            const pos = getPosition(index);
+            return (
+              <div
+                key={index}
+                className={`absolute ${cardWidth} transform -translate-x-1/2 -translate-y-1/2`}
+                style={{
+                  left: `${pos.x}%`,
+                  top: `${pos.y}%`,
+                  transition: 'all 0.5s ease-out',
+                  opacity: isVisible ? 1 : 0,
+                  transform: `translate(-50%, -50%) scale(${isVisible ? 1 : 0.5})`,
+                  transitionDelay: `${index * 100}ms`
+                }}
+              >
+                <div className="bg-white/90 backdrop-blur-sm rounded-xl border border-blue-600 shadow-sm hover:shadow-md transition-all duration-300 p-3
+                  hover:scale-105 hover:-translate-y-1">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="text-blue-500 transform transition-transform duration-300 group-hover:rotate-12">
+                      {React.cloneElement(feature.icon, { 
+                        size: windowWidth < 640 ? 16 : windowWidth < 1024 ? 18 : 20,
+                        className: "transition-transform duration-300 hover:rotate-12"
+                      })}
+                    </div>
+                    <h4 className="text-sm sm:text-base font-medium text-blue-800">
+                      {feature.title}
+                    </h4>
+                  </div>
+                  <p className="text-xs text-blue-600 leading-relaxed">
+                    {feature.description}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
-
-      <div className="md:absolute inset-0 pt-40 md:pt-0">
-        {features.map((feature, index) => {
-          const pos = getPosition(index);
-          return (
-            <div
-              ref={(el) => (featureRefs.current[index] = el)}
-              key={index}
-              className="md:absolute w-full md:w-64 mx-auto mb-6"
-              style={{
-                left: `${pos.x}%`,
-                top: `${pos.y}%`,
-                opacity: 0,
-              }}
-            >
-              <div className="bg-white rounded-xl shadow-lg p-6">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="p-3 bg-blue-100 rounded-lg">
-                    {feature.icon}
-                  </div>
-                  <h4 className="text-lg font-semibold text-gray-900">{feature.title}</h4>
-                </div>
-                <p className="text-gray-600">{feature.description}</p>
-              </div>
-            </div>
-          );
-        })}
-      </div>
     </div>
+  
   );
 };
 
 const WhyChooseUs = () => {
   const features = [
-    { icon: <Clock />, title: 'Timely Completion', description: 'We deliver on time.' },
-    { icon: <Users />, title: 'Expert Resources', description: 'Best industry resources.' },
-    { icon: <Briefcase />, title: 'High Work Ethics', description: 'Ethical and reliable.' },
-    { icon: <CheckCircle />, title: 'Quality Guaranteed', description: 'Top-notch quality.' },
-    { icon: <DollarSign />, title: 'Economical', description: 'Affordable solutions.' },
-    { icon: <Building2 />, title: 'Diverse Expertise', description: 'Expanding services.' },
+    { icon: <Clock />, title: 'Fast Delivery', description: 'Quick & reliable service delivery.' },
+    { icon: <Users />, title: 'Expert Team', description: 'Skilled professionals at work.' },
+    { icon: <Briefcase />, title: 'Professional', description: 'High standards & ethics.' },
+    { icon: <CheckCircle />, title: 'Guaranteed', description: 'Quality you can trust.' },
+    { icon: <DollarSign />, title: 'Best Value', description: 'Competitive & transparent pricing.' },
+    { icon: <Building2 />, title: 'Scale Ready', description: 'Solutions that grow with you.' },
   ];
 
   return (
-    <div className="container mx-auto px-4">
+    <div className="container mx-auto px-4 py-6 overflow-hidden">
       <CircularFeatureLayout features={features} />
     </div>
   );

@@ -6,7 +6,7 @@ import logo from '../assets/logo.jpeg';
 
 const AboutHeader = () => {
   return (
-    <div className="container mx-auto px-4 py-16 mb-24">
+    <div className="container mx-auto  mt-12 mb-0">
       <div className="flex flex-col lg:flex-row items-center justify-between gap-12 mb-16">
         <div className="w-full lg:w-1/2 relative">
           <img

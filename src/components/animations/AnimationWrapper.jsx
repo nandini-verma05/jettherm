@@ -5,7 +5,7 @@ import { useInView } from "react-intersection-observer";
 const AnimationWrapper = ({ children, direction = "left", delay = 0 }) => {
   const [ref, inView] = useInView({
     triggerOnce: false, // Allow repeated triggers
-    threshold: 0.2, // Trigger when 20% of the element is visible
+    threshold: 0.1, // Trigger when 20% of the element is visible
   });
 
   const [hasAnimated, setHasAnimated] = useState(false);

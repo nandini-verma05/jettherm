@@ -2,8 +2,9 @@ import React from 'react';
 import { Truck, Package, CircleDot, ArrowDown } from 'lucide-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSync } from '@fortawesome/free-solid-svg-icons';
-import img from "./assets/work_process1.jpg"
-import img2 from "./assets/work_process2.jpg";
+import img from "./assets/work13.jpeg"
+import img2 from "./assets/work7.jpeg";
+import img3 from "./assets/work6.jpeg";
 import SlideInWrapper from './animations/slideinwrapper';
 
 const ProcessNumber = ({ number }) => (
@@ -74,7 +75,7 @@ const WorkProcess = () => {
       icon: CircleDot,
       title: "Efficient Container Management",
       description: "Stacking sequence in unloading of material from the container, we may unload 3 containers at a time with a single forklift.",
-      image: img,
+      image: img3,
     },
   ];
 
