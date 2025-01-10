@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import pic1 from './assets/picture1.jpg';
-import pic2 from './assets/pic2.png';
-import pic3 from './assets/pic3.jfif';
+import pic1 from './assets/pic1.jpg';
+import pic2 from './assets/pic2.jpg';
+import pic3 from './assets/pic3.jpg';
+import pic4 from './assets/pic4.jpg';
 
-const images = [pic1, pic2, pic3];
+
+const images = [pic1, pic2, pic3,pic4];
 const quotes = [
   "The Power Solar journey at a glance, a history rich with experience and achievements.",
   "Harness the power of the sun for a brighter future.",

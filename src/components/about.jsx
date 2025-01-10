@@ -5,7 +5,7 @@ import {
   Timer, Award, Shield, Star, TrendingUp, Leaf,
   Target, Rocket, ArrowRight
 } from 'lucide-react';
-import logo from './assets/logo.jpeg';
+import logo from './assets/logo.png';
 import img from './assets/work_process1.jpg';
 import img2 from './assets/work2.jpeg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

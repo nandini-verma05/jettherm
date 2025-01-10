@@ -3,12 +3,10 @@ import { Clock, Users, Briefcase, CheckCircle, DollarSign, Building2 } from 'luc
 
 const WaveBackground = () => (
   <div className="absolute inset-0 overflow-hidden pointer-events-none">
-    {/* Top wave */}
     <svg 
       className="absolute top-0 w-full h-48 text-blue-100 transform rotate-180"
       viewBox="0 0 1440 320" 
       preserveAspectRatio="none"
-     
     >
       <path 
         fill="currentColor" 
@@ -17,8 +15,6 @@ const WaveBackground = () => (
       />
     </svg>
     
-    
-    {/* Bottom wave */}
     <svg 
       className="absolute bottom-0 w-full h-48 text-blue-100"
       viewBox="0 0 1440 320" 
@@ -30,7 +26,6 @@ const WaveBackground = () => (
         d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
       />
     </svg>
-   
   </div>
 );
 
@@ -83,19 +78,25 @@ const CircularFeatureLayout = ({ features }) => {
     return 'w-40';
   };
 
+  const getCardHeight = () => {
+    if (windowWidth < 640) return 'h-32';
+    if (windowWidth < 768) return 'h-36';
+    if (windowWidth < 1024) return 'h-40';
+    return 'h-44';
+  };
+
   const outerCircleRadius = getResponsiveRadius();
   const centerCircleSize = getCenterCircleSize();
   const cardWidth = getCardWidth();
+  const cardHeight = getCardHeight();
 
   const circumference = 2 * Math.PI * outerCircleRadius;
 
   return (
-    <div className="  w-full relative w-full max-w-full mx-auto bg-blue-50  p-8 overflow-hidden">
-        {/* <div className="w-full relative max-w-full mx-auto bg-blue-50 p-8 overflow-hidden"></div> */}
+    <div className="w-full relative w-full max-w-full mx-auto bg-blue-50 p-8 overflow-hidden">
       <WaveBackground />
       
       <div className="aspect-square relative w-full h-full">
-        {/* Outer Circle */}
         <svg 
           className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full" 
           viewBox="0 0 100 100" 
@@ -114,7 +115,6 @@ const CircularFeatureLayout = ({ features }) => {
           />
         </svg>
 
-        {/* Central Circle */}
         <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
           <div 
             className={`${centerCircleSize} bg-white border border-blue-600 rounded-full flex items-center justify-center shadow-lg backdrop-blur-sm
@@ -127,7 +127,6 @@ const CircularFeatureLayout = ({ features }) => {
           </div>
         </div>
 
-        {/* Feature Cards */}
         <div className="absolute inset-0 z-20">
           {features.map((feature, index) => {
             const pos = getPosition(index);
@@ -144,22 +143,35 @@ const CircularFeatureLayout = ({ features }) => {
                   transitionDelay: `${index * 100}ms`
                 }}
               >
-                <div className="bg-white/90 backdrop-blur-sm rounded-xl border border-blue-600 shadow-sm hover:shadow-md transition-all duration-300 p-3
-                  hover:scale-105 hover:-translate-y-1">
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="text-blue-500 transform transition-transform duration-300 group-hover:rotate-12">
-                      {React.cloneElement(feature.icon, { 
-                        size: windowWidth < 640 ? 16 : windowWidth < 1024 ? 18 : 20,
-                        className: "transition-transform duration-300 hover:rotate-12"
-                      })}
+                <div className={`relative ${cardHeight} rounded-xl border border-blue-600 shadow-sm hover:shadow-md 
+                  transition-all duration-300 overflow-hidden group hover:scale-105 hover:-translate-y-1`}>
+                  {/* Background Image */}
+                  <img 
+                    src={``}
+                    alt={feature.title}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-blue-900/90 to-blue-900/40 group-hover:from-blue-900/95 group-hover:to-blue-900/50 transition-all duration-300"/>
+                  
+                  {/* Content */}
+                  <div className="relative h-full p-3 flex flex-col justify-end">
+                    <div className="flex items-center gap-2 mb-1">
+                      <div className="text-white">
+                        {React.cloneElement(feature.icon, { 
+                          size: windowWidth < 640 ? 16 : windowWidth < 1024 ? 18 : 20,
+                          className: "transition-transform duration-300 group-hover:rotate-12"
+                        })}
+                      </div>
+                      <h4 className="text-sm sm:text-base font-medium text-white">
+                        {feature.title}
+                      </h4>
                     </div>
-                    <h4 className="text-sm sm:text-base font-medium text-blue-800">
-                      {feature.title}
-                    </h4>
+                    <p className="text-xs text-blue-100 leading-relaxed">
+                      {feature.description}
+                    </p>
                   </div>
-                  <p className="text-xs text-blue-600 leading-relaxed">
-                    {feature.description}
-                  </p>
                 </div>
               </div>
             );
@@ -167,7 +179,6 @@ const CircularFeatureLayout = ({ features }) => {
         </div>
       </div>
     </div>
-  
   );
 };
 
