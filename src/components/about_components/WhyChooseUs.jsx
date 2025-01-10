@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Clock, Users, Briefcase, CheckCircle, DollarSign, Building2 } from 'lucide-react';
-
+import img1 from '../assets/a.jpg'
+import img2 from '../assets/b.jpg'
+import img3 from '../assets/c.jpg'
+import img4 from '../assets/work10.jpeg'
+import img5 from '../assets/work11.jpeg'
+import img6 from '../assets/work12.jpeg'
 const WaveBackground = () => (
   <div className="absolute inset-0 overflow-hidden pointer-events-none">
     <svg 
@@ -75,14 +80,14 @@ const CircularFeatureLayout = ({ features }) => {
     if (windowWidth < 640) return 'w-28';
     if (windowWidth < 768) return 'w-32';
     if (windowWidth < 1024) return 'w-36';
-    return 'w-40';
+    return 'w-48';
   };
 
   const getCardHeight = () => {
     if (windowWidth < 640) return 'h-32';
     if (windowWidth < 768) return 'h-36';
     if (windowWidth < 1024) return 'h-40';
-    return 'h-44';
+    return 'h-52';
   };
 
   const outerCircleRadius = getResponsiveRadius();
@@ -145,17 +150,14 @@ const CircularFeatureLayout = ({ features }) => {
               >
                 <div className={`relative ${cardHeight} rounded-xl border border-blue-600 shadow-sm hover:shadow-md 
                   transition-all duration-300 overflow-hidden group hover:scale-105 hover:-translate-y-1`}>
-                  {/* Background Image */}
                   <img 
-                    src={``}
+                    src={feature.imageSrc}
                     alt={feature.title}
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   
-                  {/* Gradient Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-blue-900/90 to-blue-900/40 group-hover:from-blue-900/95 group-hover:to-blue-900/50 transition-all duration-300"/>
                   
-                  {/* Content */}
                   <div className="relative h-full p-3 flex flex-col justify-end">
                     <div className="flex items-center gap-2 mb-1">
                       <div className="text-white">
@@ -184,12 +186,42 @@ const CircularFeatureLayout = ({ features }) => {
 
 const WhyChooseUs = () => {
   const features = [
-    { icon: <Clock />, title: 'Fast Delivery', description: 'Quick & reliable service delivery.' },
-    { icon: <Users />, title: 'Expert Team', description: 'Skilled professionals at work.' },
-    { icon: <Briefcase />, title: 'Professional', description: 'High standards & ethics.' },
-    { icon: <CheckCircle />, title: 'Guaranteed', description: 'Quality you can trust.' },
-    { icon: <DollarSign />, title: 'Best Value', description: 'Competitive & transparent pricing.' },
-    { icon: <Building2 />, title: 'Scale Ready', description: 'Solutions that grow with you.' },
+    { 
+      icon: <Clock />, 
+      title: 'Fast Delivery', 
+      description: 'Quick & reliable service delivery.',
+      imageSrc: img1 // Fast delivery image
+    },
+    { 
+      icon: <Users />, 
+      title: 'Expert Team', 
+      description: 'Skilled professionals at work.',
+      imageSrc: img2 // Team image
+    },
+    { 
+      icon: <Briefcase />, 
+      title: 'Professional', 
+      description: 'High standards & ethics.',
+      imageSrc: img3 // Professional image
+    },
+    { 
+      icon: <CheckCircle />, 
+      title: 'Guaranteed', 
+      description: 'Quality you can trust.',
+      imageSrc: img4 // Quality guarantee image
+    },
+    { 
+      icon: <DollarSign />, 
+      title: 'Best Value', 
+      description: 'Competitive & transparent pricing.',
+      imageSrc:img5 // Value image
+    },
+    { 
+      icon: <Building2 />, 
+      title: 'Scale Ready', 
+      description: 'Solutions that grow with you.',
+      imageSrc: img6 // Scalability image
+    }
   ];
 
   return (
