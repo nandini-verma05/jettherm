@@ -26,10 +26,10 @@ const Home = () => {
         </AnimationWrapper>
         <Clients />
         
-        <AnimationWrapper direction="bottom" >
+        <AnimationWrapper direction="top" delay={0.2} >
           <CardsContainer />
         </AnimationWrapper>
-        <AnimationWrapper direction="right" >
+        <AnimationWrapper direction="right" delay={0.2} >
           <Scope />
         </AnimationWrapper>
         <AnimationWrapper direction="left" delay={0.2}>
@@ -39,7 +39,7 @@ const Home = () => {
         
        
 
-        <AnimationWrapper direction="bottom" delay={0.2}>
+        <AnimationWrapper direction="left" delay={0.2}>
           <Services />
         </AnimationWrapper>
 
