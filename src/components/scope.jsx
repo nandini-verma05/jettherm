@@ -2,7 +2,6 @@ import React from 'react';
 import { Building2, Wrench, Zap, ChevronRight } from 'lucide-react';
 import img1 from './assets/bg1.jpg';
 import img2 from './assets/bg2.jpg';
-import SlideInWrapper from './animations/slideinwrapper';
 
 const ScopeCard = ({ title, items, icon, index }) => {
   const backgroundImage = index % 2 === 0 ? img1 : img2; // Alternate between img1 and img2 for each card

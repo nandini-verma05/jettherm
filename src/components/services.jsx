@@ -16,7 +16,7 @@ const ServiceCard = ({ icon, title, style }) => (
 );
 
 const MobileServiceCard = ({ icon, title }) => (
-  <div className="p-4 text-center transform hover:scale-105 transition-transform duration-300">
+  <div className=" px-2 py-4 text-center transform hover:scale-105 transition-transform duration-300">
     <div className="bg-blue-200 p-3 rounded-full inline-block">
       {icon}
     </div>
@@ -77,6 +77,10 @@ const Services = () => {
     </div>
   );
 
+  // Enhanced MobileLayout with Layers (2 columns, header on top)
+  
+
+
   return (
     <div className="relative py-16 mt-12 mb-12">
       <div className="container mx-auto px-4 max-w-6xl relative">
@@ -97,7 +101,7 @@ const Services = () => {
         </div>
 
         {/* Conditional Layout Rendering */}
-        {isMobile ? <MobileLayout /> : <CircularLayout />}
+        {isMobile ? <MobileLayout/> : <CircularLayout />}
       </div>
     </div>
   );

@@ -43,7 +43,7 @@ const AnimationWrapper = ({ children, direction = "left", delay = 0 }) => {
       initial="hidden"
       animate={inView ? "visible" : "hidden"} // Always animate based on visibility
       variants={variants}
-    >
+     overflow-hidden>
       {children}
     </motion.div>
   );

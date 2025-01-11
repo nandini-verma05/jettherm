@@ -2,7 +2,6 @@ import React from 'react';
 import { Truck, Package, CircleDot, ArrowDown } from 'lucide-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSync } from '@fortawesome/free-solid-svg-icons';
-import SlideInWrapper from './animations/slideinwrapper';
 import img from "./assets/work13.jpeg"
 import img2 from "./assets/work7.jpeg";
 import img3 from "./assets/work6.jpeg";

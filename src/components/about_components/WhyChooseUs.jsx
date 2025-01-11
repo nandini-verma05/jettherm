@@ -6,6 +6,8 @@ import img3 from '../assets/c.jpg'
 import img4 from '../assets/work10.jpeg'
 import img5 from '../assets/work11.jpeg'
 import img6 from '../assets/work12.jpeg'
+import { useInView } from 'react-intersection-observer';
+import AnimationWrapper from '../animations/AnimationWrapper';
 const WaveBackground = () => (
   <div className="absolute inset-0 overflow-hidden pointer-events-none">
     <svg 
@@ -96,6 +98,22 @@ const CircularFeatureLayout = ({ features }) => {
   const cardHeight = getCardHeight();
 
   const circumference = 2 * Math.PI * outerCircleRadius;
+
+  const [ref, inView] = useInView({
+    triggerOnce: false, // Allow repeated triggers
+    threshold: 0.1, // Trigger when 20% of the element is visible
+  });
+
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  // Update animation state
+  useEffect(() => {
+    if (inView) {
+      setHasAnimated(true); // Component enters view
+    } else if (!inView && hasAnimated) {
+      setHasAnimated(false); // Reset if component exits view
+    }
+  }, [inView, hasAnimated]);
 
   return (
     <div className="w-full relative w-full max-w-full mx-auto bg-blue-50 p-8 overflow-hidden">

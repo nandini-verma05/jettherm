@@ -12,7 +12,6 @@ import ContactForm from './contact';
 import Blogs from './Blogs';
 import Clients from './client';
 import AnimationWrapper from './animations/AnimationWrapper';
-
 const Home = () => {
   return (
     <section id="home">
@@ -52,15 +51,17 @@ const Home = () => {
           <SlidingCards />
        
 
+       <AnimationWrapper direction="right" delay={0.1}>
+        <Gallery />
+       </AnimationWrapper>
         
-          <Gallery />
       
 
           <SideMenu />
        
-
+<AnimationWrapper direction="bottom" >
           <Blogs />
-       
+ </AnimationWrapper>
 
         <AnimationWrapper direction="bottom" >
           <ContactForm />
