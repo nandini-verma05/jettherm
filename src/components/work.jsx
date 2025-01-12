@@ -84,7 +84,7 @@ const WorkProcess = () => {
   ];
 
   return (
-    <div className="py-8 md:py-16 px-4">
+    <div className="py-8 md:py-16 px-4 overflow-hidden">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-8 md:mb-16">
           <div className="inline-flex items-center justify-center p-3 md:p-4 mb-3 md:mb-4">

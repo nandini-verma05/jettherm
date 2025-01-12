@@ -88,7 +88,7 @@ const Scope = () => {
 
   return (
    
-    <div className="relative py-24 min-h-screen">
+    <div className="relative py-24 min-h-screen overflow-hidden">
       {/* Background with multiple gradients for a more interesting effect */}
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}

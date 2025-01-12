@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Phone, Mail } from 'lucide-react';
+import { Phone, Mail, Instagram, Facebook, Linkedin } from 'lucide-react';
 
 const SideMenuItem = ({ Icon, text, bgColor, width, ariaLabel }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -10,7 +10,7 @@ const SideMenuItem = ({ Icon, text, bgColor, width, ariaLabel }) => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="absolute right-0">
+      <div className="absolute right-0 overflow-hidden">
         <button
           className={`flex items-center justify-end transition-all duration-300 ease-in-out ${
             isHovered ? width : 'w-14'
@@ -51,6 +51,33 @@ const SideMenu = () => {
             bgColor="bg-black"
             width="w-64"
             ariaLabel="Email us"
+          />
+        </div>
+        <div className="h-14">
+          <SideMenuItem
+            Icon={Instagram}
+            text="Instagram"
+            bgColor="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500"
+            width="w-64"
+            ariaLabel="Instagram"
+          />
+        </div>
+        <div className="h-14">
+          <SideMenuItem
+            Icon={Facebook}
+            text="Facebook"
+            bgColor="bg-blue-600"
+            width="w-64"
+            ariaLabel="Facebook"
+          />
+        </div>
+        <div className="h-14">
+          <SideMenuItem
+            Icon={Linkedin}
+            text="LinkedIn"
+            bgColor="bg-blue-700"
+            width="w-64"
+            ariaLabel="LinkedIn"
           />
         </div>
       </div>

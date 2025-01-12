@@ -82,7 +82,7 @@ const Services = () => {
 
 
   return (
-    <div className="relative py-16 mt-12 mb-12">
+    <div className="relative py-16 mt-12 mb-12 overflow-hidden">
       <div className="container mx-auto px-4 max-w-6xl relative">
         {/* Header Section */}
        

@@ -42,7 +42,7 @@ const CardsContainer = () => {
   ];
 
   return (
-    <div className="relative  py-16 px-4 mb-12">
+    <div className="relative  py-16 px-4 mb-12 overflow-hidden">
      
       <div className="container mx-auto max-w-6xl">
         {/* Section Header */}
