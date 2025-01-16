@@ -81,7 +81,7 @@ const data = [
 const Blogs= () => {
   return (
     <section id="blogs">
-    <div className="container mx-auto px-4 py-16">
+    <div className="container mx-auto px-4 py-4">
        <div className="flex justify-center mb-4"> 
     <FontAwesomeIcon icon={faNewspaper} className="text-blue-500 w-12 h-12" />
   </div>

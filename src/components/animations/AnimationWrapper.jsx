@@ -45,6 +45,7 @@ const AnimationWrapper = ({ children, direction = "left", delay = 0 }) => {
       variants={variants}
      overflow-hidden>
       {children}
+      
     </motion.div>
   );
 };

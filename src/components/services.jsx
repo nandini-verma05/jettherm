@@ -70,7 +70,7 @@ const Services = () => {
   };
 
   const MobileLayout = () => (
-    <div className="grid grid-cols-2 gap-2 px-4">
+    <div className="flex flex-col space-y-4 px-4 mt-24">
       {services.map((service, index) => (
         <MobileServiceCard key={index} {...service} />
       ))}
@@ -82,17 +82,17 @@ const Services = () => {
 
 
   return (
-    <div className="relative py-16 mt-12 mb-12 overflow-hidden">
-      <div className="container mx-auto px-4 max-w-6xl relative">
+    <div className="relative py-16 mt-12 mb-12 ">
+      <div className="container mx-auto px-4 py-4 max-w-6xl relative">
         {/* Header Section */}
        
           <div className="absolute left-1/2 top-0 lg:top-1/2 -translate-x-1/2 lg:-translate-y-1/2 z-20">
-          <div className="text-center mb-8">
+          <div className="text-center mb-2">
           <FontAwesomeIcon 
             icon={faHandsHelping} 
             className="w-8 h-8 md:w-12 md:h-12 mx-auto mb-2 text-blue-500" 
           />
-          <h3 className="text-xl md:text-2xl font-bold text-black text-center p-4">
+          <h3 className="text-xl md:text-2xl font-bold text-black text-center  px-4 py-4">
            Our services
           </h3>
        

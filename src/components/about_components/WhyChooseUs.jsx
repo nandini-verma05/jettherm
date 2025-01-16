@@ -7,7 +7,6 @@ import img4 from '../assets/work10.jpeg'
 import img5 from '../assets/work11.jpeg'
 import img6 from '../assets/work12.jpeg'
 import { useInView } from 'react-intersection-observer';
-import AnimationWrapper from '../animations/AnimationWrapper';
 const WaveBackground = () => (
   <div className="absolute inset-0 overflow-hidden pointer-events-none">
     <svg 
@@ -202,7 +201,9 @@ const CircularFeatureLayout = ({ features }) => {
   );
 };
 
-const WhyChooseUs = () => {
+
+
+const WhyChooseUs = ({windowWidth}) => {
   const features = [
     { 
       icon: <Clock />, 
@@ -241,10 +242,44 @@ const WhyChooseUs = () => {
       imageSrc: img6 // Scalability image
     }
   ];
+  const MobileLayout = () => (
+    <div className="flex flex-col space-y-4 px-4">
+      {features.map((feature, index) => (
+        <div
+          key={index}
+          className={`relative rounded-xl border border-blue-600 shadow-sm hover:shadow-md 
+            transition-all duration-300 overflow-hidden group hover:scale-105 hover:-translate-y-1`}
+        >
+          <img
+            src={feature.imageSrc}
+            alt={feature.title}
+            className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-blue-900/90 to-blue-900/40 group-hover:from-blue-900/95 group-hover:to-blue-900/50 transition-all duration-300" />
+          <div className="relative h-full p-3 flex flex-col justify-end">
+            <div className="flex items-center gap-2 mb-1">
+              <div className="text-white">
+                {React.cloneElement(feature.icon, {
+                  size: windowWidth < 640 ? 16 : windowWidth < 1024 ? 18 : 20,
+                  className: "transition-transform duration-300 group-hover:rotate-12"
+                })}
+              </div>
+              <h4 className="text-sm sm:text-base font-medium text-white">
+                {feature.title}
+                </h4>
+              </div>
+              <p className="text-xs text-blue-100 leading-relaxed">
+                {feature.description}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    );
 
   return (
     <div className="container mx-auto px-4 py-6 overflow-hidden">
-      <CircularFeatureLayout features={features} />
+     {windowWidth < 640 ? <MobileLayout /> : <CircularFeatureLayout features={features} />}
     </div>
   );
 };

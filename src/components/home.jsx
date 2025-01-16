@@ -51,17 +51,17 @@ const Home = () => {
           <SlidingCards />
        
 
-       <AnimationWrapper direction="right" delay={0.1}>
+       
         <Gallery />
-       </AnimationWrapper>
+       
         
       
 
           <SideMenu />
        
-<AnimationWrapper direction="bottom" >
+
           <Blogs />
- </AnimationWrapper>
+ 
 
         <AnimationWrapper direction="bottom" >
           <ContactForm />
