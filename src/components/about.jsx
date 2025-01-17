@@ -1,22 +1,20 @@
 import React from 'react';
-import { useEffect, useRef } from 'react';
+
 import { 
-  Clock, Users, Briefcase, CheckCircle, DollarSign, Building2,
-  Timer, Award, Shield, Star, TrendingUp, Leaf,
-  Target, Rocket, ArrowRight
+  
+  Target, Rocket, 
 } from 'lucide-react';
-import logo from './assets/logo.png';
+
 import img from './assets/work_process1.jpg';
 import img2 from './assets/work2.jpeg';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+
 import WhyChooseUs from './about_components/WhyChooseUs';
 import AboutHeader from './about_components/AboutHeader';
 import AnimationWrapper from './animations/AnimationWrapper';
 const MissionVisionSection = () => {
   return (
   <AnimationWrapper direction="right" delay={0.1}>
-    <div className="grid grid-cols-1 gap-16 mt-16">
+    <div className="grid grid-cols-1 px-0 py-0 mt-16">
       
       <div className="flex flex-col lg:flex-row items-center space-y-6 lg:space-y-0 lg:space-x-6 lg:space-x-reverse">
         <div className="flex-1 flex flex-col space-y-6">
@@ -89,24 +87,24 @@ const MissionVisionSection = () => {
 const About = () => {
   return (
    
-<div>
 
 
-      <div id="about">
+
+    
    
      
        
        
         
-        <div>
+        <div  id="about" className='px-0 py-0'>
           <AboutHeader />
           <MissionVisionSection />
           <WhyChooseUs />
          
         </div>
-        </div>
+       
      
-        </div> 
+         
       
       
       

@@ -29,7 +29,7 @@ const Banner = () => {
   }, []);
 
   return (
-    <div className="sticky h-screen overflow-hidden">
+    <div className="sticky h-screen overflow-hidden px-0 py-0">
       {/* Background Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/60 z-10" />
 

@@ -7,33 +7,6 @@ import img4 from '../assets/work10.jpeg'
 import img5 from '../assets/work11.jpeg'
 import img6 from '../assets/work12.jpeg'
 import { useInView } from 'react-intersection-observer';
-const WaveBackground = () => (
-  <div className="absolute inset-0 overflow-hidden pointer-events-none">
-    <svg 
-      className="absolute top-0 w-full h-48 text-blue-100 transform rotate-180"
-      viewBox="0 0 1440 320" 
-      preserveAspectRatio="none"
-    >
-      <path 
-        fill="currentColor" 
-        fillOpacity="1" 
-        d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-      />
-    </svg>
-    
-    <svg 
-      className="absolute bottom-0 w-full h-48 text-blue-100"
-      viewBox="0 0 1440 320" 
-      preserveAspectRatio="none"
-    >
-      <path 
-        fill="currentColor" 
-        fillOpacity="1" 
-        d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-      />
-    </svg>
-  </div>
-);
 
 const CircularFeatureLayout = ({ features }) => {
   const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 0);
@@ -116,10 +89,10 @@ const CircularFeatureLayout = ({ features }) => {
 
   return (
     
-    <div className="w-full relative w-full max-w-full mx-auto bg-blue-50 p-8 overflow-hidden">
-      <WaveBackground />
+    <div className="w-full relative   overflow-hidden">
+    
       
-      <div className="aspect-square relative w-full h-full">
+      <div className="aspect-square relative w-full h-full px-4">
         <svg 
           className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full" 
           viewBox="0 0 100 100" 
@@ -244,7 +217,7 @@ const WhyChooseUs = ({windowWidth}) => {
     }
   ];
   const MobileLayout = () => (
-    <div className="flex flex-col space-y-4 px-4">
+    <div className="flex flex-col space-y-4 w-full">
       {features.map((feature, index) => (
         <div
           key={index}

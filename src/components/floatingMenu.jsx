@@ -40,7 +40,7 @@ const SideMenu = () => {
             Icon={Phone}
             text="Call Us"
             bgColor="bg-black"
-            width="w-56 sm:w-full"
+            width="w-56 "
             ariaLabel="Call us"
           />
         </div>
@@ -49,7 +49,7 @@ const SideMenu = () => {
             Icon={Mail}
             text="Email Us"
             bgColor="bg-black"
-            width="w-64 sm:w-full"
+            width="w-64 "
             ariaLabel="Email us"
           />
         </div>
@@ -58,7 +58,7 @@ const SideMenu = () => {
             Icon={Instagram}
             text="Instagram"
             bgColor="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500"
-            width="w-64 sm:w-full"
+            width="w-64 "
             ariaLabel="Instagram"
           />
         </div>
@@ -67,7 +67,7 @@ const SideMenu = () => {
             Icon={Facebook}
             text="Facebook"
             bgColor="bg-blue-600"
-            width="w-64 sm:w-full"
+            width="w-64 "
             ariaLabel="Facebook"
           />
         </div>
@@ -76,7 +76,7 @@ const SideMenu = () => {
             Icon={Linkedin}
             text="LinkedIn"
             bgColor="bg-blue-700"
-            width="w-64 sm:w-full"
+            width="w-64 "
             ariaLabel="LinkedIn"
           />
         </div>

@@ -8,7 +8,7 @@ import AnimationWrapper from '../animations/AnimationWrapper';
 const AboutHeader = () => {
   return (
     <AnimationWrapper direction="left" delay={0.1}>
-    <div className="container mx-auto  mt-12 mb-0">
+    <div className="container mx-auto  py-4 px-0 mb-0">
       <div className="flex flex-col lg:flex-row items-center justify-between gap-12 mb-16">
         <div className="w-full lg:w-1/2 relative">
           <img

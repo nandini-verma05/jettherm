@@ -1,35 +1,33 @@
 import React from 'react';
 import { Building2, Wrench, Zap, ChevronRight } from 'lucide-react';
-
-
-const ScopeCard = ({ title, items, icon, index }) => {
-
-  return (
-    <div className={`flex items-center gap-8 ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} w-full max-w-4xl mx-auto`}>
-      {/* Icon Section */}
-      <div className="relative shrink-0">
-        <div className="absolute -inset-2 bg-blue-500/100 rounded-full blur-xl" />
-        <div className="relative w-20 h-20 bg-white rounded-full shadow-lg flex items-center justify-center">
-          {React.cloneElement(icon, { 
-            className: "w-10 h-10 text-blue-600" 
-          })}
-        </div>
-        
-        {/* Connector Line */}
-        {index !== 2 && (
-          <div className="absolute top-full left-1/2 w-1 h-24 bg-gradient-to-b from-blue-500 to-transparent -translate-x-1/2" />
-        )}
-      </div>
-
+import img from './images/15.jpeg'
+import img2 from './images/6.jpeg'
+import img3 from './images/3.jpeg'
+const ScopeCard = ({ title, items, icon, index ,imageUrl}) => {
+  const isEven = index % 2 === 0;
   
-      
-        {/* Decorative arrow */}
-        <div className={`absolute top-1/2 -translate-y-1/2 ${
-          index % 2 === 0 ? '-left-3' : '-right-3'
-        } w-6 h-6 bg-white transform rotate-45`} />
-        
-        <div className="relative">
-          <h3 className="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+  return (
+    <div className="flex flex-col md:flex-row items-center gap-12 w-full max-w-5xl mx-auto">
+      {/* Text Content - Always First on Mobile */}
+      <div className="flex items-start gap-8 w-full md:w-1/2 order-1">
+        {/* Icon Section */}
+        <div className="relative shrink-0">
+          <div className="absolute -inset-2 bg-blue-500/100 rounded-full blur-xl" />
+          <div className="relative w-16 md:w-20 h-16 md:h-20 bg-white rounded-full shadow-lg flex items-center justify-center">
+            {React.cloneElement(icon, { 
+              className: "w-8 md:w-10 h-8 md:h-10 text-blue-600" 
+            })}
+          </div>
+          
+          {/* Connector Line - Only visible on desktop */}
+          {index !== 2 && (
+            <div className="hidden md:block absolute top-full left-1/2 w-1 h-24 bg-gradient-to-b from-blue-500 to-transparent -translate-x-1/2" />
+          )}
+        </div>
+
+        {/* Text Content */}
+        <div className="flex-1">
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
             <span>{title}</span>
           </h3>
           
@@ -43,7 +41,20 @@ const ScopeCard = ({ title, items, icon, index }) => {
           </ul>
         </div>
       </div>
-   
+
+      {/* Image - Order changes based on index on desktop, always second on mobile */}
+      <div className={`w-full md:w-1/2 order-2 md:order-${isEven ? 2 : 1}`}>
+        <div className="relative rounded-lg overflow-hidden shadow-xl transform hover:scale-105 transition-transform duration-300 mt-8 md:mt-0">
+          <img
+            src={imageUrl}
+            alt={`${title} illustration`}
+            className="w-full h-48 md:h-64 object-cover"
+          />
+          {/* Overlay gradient */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+        </div>
+      </div>
+    </div>
   );
 };
 
@@ -53,6 +64,7 @@ const Scope = () => {
       title: "Civil Scope",
       icon: <Building2 />,
       items: ["Pile Anchoring, Pile Cap", "Construction of Inverter Control Room"],
+      imageUrl :img
     },
     {
       title: "Mechanical Scope",
@@ -65,6 +77,7 @@ const Scope = () => {
         "Fabrication",
         "All kinds of welding (e.g. Arc, Organic, Mig, Gas etc.)",
       ],
+      imageUrl :img2
     },
     {
       title: "Electrical Scope",
@@ -74,39 +87,37 @@ const Scope = () => {
         "Connection of junction boxes, Erection of SRCB with foundation",
         "All DC side activities",
       ],
+      imageUrl :img3
     },
   ];
 
   return (
-   
-    <div className="relative py-24 min-h-screen overflow-hidden">
-      {/* Background with multiple gradients for a more interesting effect */}
-      <div className="container mx-auto px-6 relative z-10">
+    <div className="relative py-12 md:py-24 min-h-screen overflow-hidden">
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         {/* Header */}
-        <div className="text-center mb-24">
-          <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-blue-600/10 mb-8">
-            <Wrench className="w-10 h-10 text-blue-500" />
+        <div className="text-center mb-16 md:mb-24">
+          <div className="inline-flex items-center justify-center w-16 md:w-20 h-16 md:h-20 rounded-full bg-blue-600/10 mb-6 md:mb-8">
+            <Wrench className="w-8 md:w-10 h-8 md:h-10 text-blue-500" />
           </div>
           
-          <h2 className="text-5xl font-bold text-black mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-black mb-4 md:mb-6">
             Our Scope of Work
           </h2>
-          <div className="w-48 h-1 bg-gradient-to-r from-blue-400 via-blue-600 to-blue-400 mx-auto mt-4 mb-4 rounded-full" />
+          <div className="w-32 md:w-48 h-1 bg-gradient-to-r from-blue-400 via-blue-600 to-blue-400 mx-auto mt-4 mb-4 rounded-full" />
 
-          <p className="text-lg text-grey-500 max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-grey-500 max-w-2xl mx-auto">
             Comprehensive solutions across civil, mechanical, and electrical domains
           </p>
         </div>
 
         {/* Zigzag Layout */}
-        <div className="space-y-16">
+        <div className="space-y-16 md:space-y-24">
           {scopes.map((scope, index) => (
             <ScopeCard key={index} {...scope} index={index} />
           ))}
         </div>
       </div>
     </div>
-   
   );
 };
 
