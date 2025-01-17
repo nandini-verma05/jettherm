@@ -10,7 +10,7 @@ const SideMenuItem = ({ Icon, text, bgColor, width, ariaLabel }) => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="absolute right-0 ">
+      <div className="absolute right-0 left-0 z-20">
         <button
           className={`flex items-center justify-end transition-all duration-300 ease-in-out ${
             isHovered ? width : 'w-14'
