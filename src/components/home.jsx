@@ -10,7 +10,7 @@ import WorkProcess from './work';
 import Gallery from './gallery';
 import ContactForm from './contact';
 import Blogs from './Blogs';
-import Clients from './Clients';
+import Clients from './clients';
 import AnimationWrapper from './animations/AnimationWrapper';
 const Home = () => {
   return (

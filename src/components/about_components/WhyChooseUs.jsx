@@ -98,7 +98,7 @@ const CircularFeatureLayout = ({ features }) => {
 
   const circumference = 2 * Math.PI * outerCircleRadius;
 
-  const [ref, inView] = useInView({
+  const [ inView] = useInView({
     triggerOnce: false, // Allow repeated triggers
     threshold: 0.1, // Trigger when 20% of the element is visible
   });
@@ -115,6 +115,7 @@ const CircularFeatureLayout = ({ features }) => {
   }, [inView, hasAnimated]);
 
   return (
+    
     <div className="w-full relative w-full max-w-full mx-auto bg-blue-50 p-8 overflow-hidden">
       <WaveBackground />
       

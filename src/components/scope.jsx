@@ -1,10 +1,8 @@
 import React from 'react';
 import { Building2, Wrench, Zap, ChevronRight } from 'lucide-react';
-import img1 from './assets/bg1.jpg';
-import img2 from './assets/bg2.jpg';
+
 
 const ScopeCard = ({ title, items, icon, index }) => {
-  const backgroundImage = index % 2 === 0 ? img1 : img2; // Alternate between img1 and img2 for each card
 
   return (
     <div className={`flex items-center gap-8 ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} w-full max-w-4xl mx-auto`}>
@@ -23,15 +21,8 @@ const ScopeCard = ({ title, items, icon, index }) => {
         )}
       </div>
 
-      {/* Content Card with background image */}
-      <div
-        className="group flex-1 bg-white/95 backdrop-blur-md rounded-xl shadow-lg p-6 opacticity-50% relative"
-        style={{
-          backgroundImage: `url(${backgroundImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
+  
+      
         {/* Decorative arrow */}
         <div className={`absolute top-1/2 -translate-y-1/2 ${
           index % 2 === 0 ? '-left-3' : '-right-3'
@@ -52,7 +43,7 @@ const ScopeCard = ({ title, items, icon, index }) => {
           </ul>
         </div>
       </div>
-    </div>
+   
   );
 };
 

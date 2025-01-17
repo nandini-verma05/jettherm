@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import logo from './assets/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {  Home, User, Briefcase, Image, Phone, FileText, Users } from 'lucide-react';
 import { faHome, faInfoCircle, faUsers, faImages, faEnvelope, faNewspaper, faUserFriends } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = () => {

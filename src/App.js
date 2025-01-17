@@ -2,12 +2,12 @@
 import React from 'react';
 import { BrowserRouter , Routes, Route} from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Banner from './components/Banner';
+
 import   About from './components/about';
 import SlidingCards from './components/teams';
 import Gallery from './components/gallery';
 import Home from './components/home';
-import Clients from './components/Clients.jsx';
+import Clients from './components/clients.jsx';
 import './index.css';
 import ContactForm from './components/contact';
 import Blogs from './components/Blogs';
