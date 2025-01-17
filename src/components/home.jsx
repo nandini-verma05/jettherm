@@ -14,7 +14,14 @@ import Clients from './clients';
 import AnimationWrapper from './animations/AnimationWrapper';
 const Home = () => {
   return (
-    <section id="home">
+   
+    <section
+      id="home"
+      style={{
+        overflowX: 'hidden', // Restrict horizontal scrolling
+        width: '100vw', // Ensure container width fits the viewport
+      }}
+    >
       <div>
        
           <Banner />
