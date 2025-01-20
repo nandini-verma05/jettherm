@@ -21,14 +21,16 @@ const Clients = () => {
   return (
     <section id="clients">
       <section className="py-8 overflow-hidden">
-        <div className="container mx-auto px-4 ">
+        <div className="container mx-auto ">
           <h2 className="text-3xl font-bold text-center text-black mb-4"> Our Clients</h2>
           <div className="w-48 h-1 bg-gradient-to-r from-blue-400 via-blue-600 to-blue-400 mx-auto mt-4 mb-4 rounded-full" />
 
-          <div className="container mx-auto px-4">
-            <div className="flex flex-nowrap items-center justify-start space-x-8 animate-marquee pb-4">
+          <div className="container mx-auto ">
+          <div className="relative w-full overflow-x-hidden">
+            <div className="inline-flex animate-[marquee_8s_linear_infinite] hover:pause">
+              {/* First set of logos */}
               {logos.map((logo, index) => (
-                <div key={index} className="flex-shrink-0">
+                <div key={index} className="flex-shrink-0 mx-8">
                   <img
                     src={logo}
                     alt={`Client logo ${index + 1}`}
@@ -38,9 +40,9 @@ const Clients = () => {
                   />
                 </div>
               ))}
-              {/* Duplicate the logos to create a continuous scroll effect */}
+              {/* Second set of logos for seamless loop */}
               {logos.map((logo, index) => (
-                <div key={index + logos.length} className="flex-shrink-0">
+                <div key={`second-${index}`} className="flex-shrink-0 mx-8">
                   <img
                     src={logo}
                     alt={`Client logo ${index + 1}`}
@@ -51,6 +53,9 @@ const Clients = () => {
                 </div>
               ))}
             </div>
+          </div>
+            {/* dupilcate */}
+           
           </div>
           <div className="flex justify-center mt-6">
   <button

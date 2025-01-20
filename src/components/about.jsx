@@ -39,7 +39,7 @@ const MissionVisionSection = () => {
         <div className="flex-1 flex justify-center">
           <img
             src={img}
-            alt="Vision Image"
+            alt="vision"
             className="wave-shape rounded-tr-[100px] rounded-bl-[100px] border-4 border-blue shadow-lg"
           />
         </div>
@@ -71,7 +71,7 @@ const MissionVisionSection = () => {
         <div className="flex-1 flex justify-center">
           <img
             src={img2}
-            alt="Mission Image"
+            alt="Mission"
             className="wave-shape rounded-tr-[100px] rounded-bl-[100px] border-4 border-blue shadow-inner"
           />
         </div>
