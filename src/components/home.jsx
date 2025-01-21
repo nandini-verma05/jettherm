@@ -11,6 +11,7 @@ import Gallery from './gallery';
 import ContactForm from './contact';
 import Blogs from './Blogs';
 import Clients from './clients';
+import Workforce from './workforce';
 import AnimationWrapper from './animations/AnimationWrapper';
 const Home = () => {
   return (
@@ -37,6 +38,9 @@ const Home = () => {
         </AnimationWrapper>
         <AnimationWrapper direction="right" delay={0.2} >
           <Scope />
+        </AnimationWrapper>
+        <AnimationWrapper direction="left" delay={0.2}>
+          <Workforce/>
         </AnimationWrapper>
         <AnimationWrapper direction="left" delay={0.2}>
           <WorkProcess />

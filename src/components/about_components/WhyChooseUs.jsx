@@ -252,8 +252,10 @@ const WhyChooseUs = ({windowWidth}) => {
     );
 
   return (
-    <div className="container mx-auto px-4 py-6 overflow-hidden">
+    <div className="overflow-hidden min-h-screen  py-12 px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto">
      {windowWidth < 640 ? <MobileLayout /> : <CircularFeatureLayout features={features} />}
+    </div>
     </div>
   );
 };
