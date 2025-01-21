@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Phone, Mail, Instagram, Facebook, Linkedin } from 'lucide-react';
+import { Phone, Mail, Instagram, Facebook, Linkedin, MessageCircle } from 'lucide-react';
 
 const SideMenuItem = ({ Icon, text, bgColor, width, ariaLabel }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -51,6 +51,15 @@ const SideMenu = () => {
             bgColor="bg-black"
             width="w-64 "
             ariaLabel="Email us"
+          />
+        </div>
+        <div className="h-14 sm:w-full">
+          <SideMenuItem
+            Icon={MessageCircle}
+            text="WhatsApp"
+            bgColor="bg-green-500"
+            width="w-64 "
+            ariaLabel="WhatsApp"
           />
         </div>
         <div className="h-14 sm:w-full">

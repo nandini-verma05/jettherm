@@ -9,15 +9,28 @@ const logos = [
   require("./assets/company_logo/logo12.jpeg"),
   require("./assets/company_logo/logo13.avif"),
   require("./assets/company_logo/logo14.jpg"),
+  require("./assets/company_logo/logo15.jfif"),
+  require("./assets/company_logo/logo16.png"),
 ];
 
 const Clients = () => {
   const [showAll, setShowAll] = useState(false);
-
+  
   const handleShowAll = () => {
-    setShowAll(true);
+    setShowAll(!showAll);
   };
+ const descriptions =[
+  "ACME",
+  "LANCO",
+  "WIPRO",
+  "M+W ",
+  "TATA POWER GROUP",
+  "SUNEDISION INFRASTRUCRE LTD. ",
+  "VOLTAS LTD",
+  "GENSOL",
+  "STERLING WILSON "
 
+ ]
   return (
     <section id="clients">
       <section className="py-8 overflow-hidden">
@@ -66,7 +79,7 @@ const Clients = () => {
   </button>
 </div>
           {showAll && (
-            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 bg-blue-50 gap-4">
               {logos.map((logo, index) => (
                 <div key={index} className="flex flex-col items-center">
                   <img
@@ -76,7 +89,7 @@ const Clients = () => {
                     height={120}
                     className="object-contain w-auto h-24 sm:h-32"
                   />
-                  <p className="mt-2 text-center">Description for Client {index + 1}</p>
+                  <p className="mt-2 text-center">{descriptions[index]}</p>
                 </div>
               ))}
             </div>
