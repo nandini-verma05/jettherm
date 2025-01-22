@@ -1,7 +1,8 @@
+
 import React, { useState } from 'react';
 import { Phone, Mail, Instagram, Facebook, Linkedin } from 'lucide-react';
 
-const SideMenuItem = ({ Icon, text, bgColor, width, ariaLabel }) => {
+const SideMenuItem = ({ Icon, text, bgColor, width, ariaLabel, onClick }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -10,12 +11,13 @@ const SideMenuItem = ({ Icon, text, bgColor, width, ariaLabel }) => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="absolute right-0  z-20">
+      <div className="absolute right-0 z-20">
         <button
           className={`flex items-center justify-end transition-all duration-300 ease-in-out ${
             isHovered ? width : 'w-14'
           } ${bgColor} text-white p-4 rounded-l-lg shadow-lg hover:brightness-110`}
           aria-label={ariaLabel}
+          onClick={onClick} // Pass the onClick handler here
         >
           <div
             className={`absolute right-14 transition-all duration-300 ${
@@ -40,8 +42,9 @@ const SideMenu = () => {
             Icon={Phone}
             text="Call Us"
             bgColor="bg-black"
-            width="w-56 "
+            width="w-56"
             ariaLabel="Call us"
+            onClick={() => (window.location.href = 'tel:+7724068116')} // Redirect to dial pad
           />
         </div>
         <div className="h-14 sm:w-full">
@@ -49,8 +52,11 @@ const SideMenu = () => {
             Icon={Mail}
             text="Email Us"
             bgColor="bg-black"
-            width="w-64 "
+            width="w-64"
             ariaLabel="Email us"
+            onClick={() =>
+              (window.location.href = 'mailto:Jettherm1991@gmail.com')
+            } // Redirect to email client
           />
         </div>
         <div className="h-14 sm:w-full">
@@ -58,8 +64,9 @@ const SideMenu = () => {
             Icon={Instagram}
             text="Instagram"
             bgColor="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500"
-            width="w-64 "
+            width="w-64"
             ariaLabel="Instagram"
+            onClick={() => window.open('https://www.instagram.com/birjuchoudhary_cg?igsh=ZXdsMzNpaXl1NDNw')} // Redirect to Instagram
           />
         </div>
         <div className="h-14 sm:w-full">
@@ -67,8 +74,9 @@ const SideMenu = () => {
             Icon={Facebook}
             text="Facebook"
             bgColor="bg-blue-600"
-            width="w-64 "
+            width="w-64"
             ariaLabel="Facebook"
+            onClick={() => window.open('https://facebook.com', '_blank')} // Redirect to Facebook
           />
         </div>
         <div className="h-14 sm:w-full">
@@ -76,8 +84,9 @@ const SideMenu = () => {
             Icon={Linkedin}
             text="LinkedIn"
             bgColor="bg-blue-700"
-            width="w-64 "
+            width="w-64"
             ariaLabel="LinkedIn"
+            onClick={() => window.open('https://www.linkedin.com/in/jayprakash-parida-674ba3242/')} // Redirect to LinkedIn
           />
         </div>
       </div>

@@ -3,12 +3,13 @@ import React, { useState } from 'react';
 // Array of logo images
 const logos = [
   require("./assets/company_logo/logo1.png"),
-  require("./assets/company_logo/logo2.webp"),
+  require("./assets/company_logo/logo2.png"),
   require("./assets/company_logo/logo3.png"),
   require("./assets/company_logo/logo5.png"),
   require("./assets/company_logo/logo12.jpeg"),
-  require("./assets/company_logo/logo13.avif"),
+  require("./assets/company_logo/logo13.png"),
   require("./assets/company_logo/logo14.jpg"),
+  require("./assets/company_logo/infosys-logo-PNG.png"),
 ];
 
 const Clients = () => {

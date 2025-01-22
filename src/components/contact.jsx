@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Send, User, Mail, MessageSquare, FileText, Loader2 } from 'lucide-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+import emailjs from '@emailjs/browser';
 
 const WaveBackground = () => (
   <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -75,27 +76,58 @@ const ContactForm = () => {
     return Object.keys(newErrors).length === 0;
   };
   
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+    
+  //   if (validateForm()) {
+  //     setLoading(true);
+      
+  //     // Simulate API call
+  //     await new Promise(resolve => setTimeout(resolve, 1000));
+      
+  //     console.log('Form submitted:', formData);
+  //     setSubmitted(true);
+  //     setLoading(false);
+      
+  //     setFormData({
+  //       name: '',
+  //       email: '',
+  //       subject: '',
+  //       message: ''
+  //     });
+      
+  //     setTimeout(() => setSubmitted(false), 5000);
+  //   }
+  // };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
     if (validateForm()) {
       setLoading(true);
-      
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      console.log('Form submitted:', formData);
-      setSubmitted(true);
-      setLoading(false);
-      
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
-      
-      setTimeout(() => setSubmitted(false), 5000);
+      try {
+        await emailjs.send(
+          'service_v1854d9', // Replace with your EmailJS service ID
+          'template_why86fn', // Replace with your EmailJS template ID
+          {
+            from_name: formData.name,
+            from_email: formData.email,
+            subject: formData.subject,
+            message: formData.message,
+            to_email: 'Jettherm1991@gmail.com', // The specific recipient email
+          },
+          'EDVSmdtPaJJQpOQXT' // Replace with your EmailJS user ID (public key)
+        );
+        setSubmitted(true);
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: '',
+        });
+      } catch (error) {
+        console.error('Failed to send email:', error);
+      } finally {
+        setLoading(false);
+      }
     }
   };
   
