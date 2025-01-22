@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Phone, Mail, Instagram, Facebook, Linkedin } from 'lucide-react';
+import { Phone, Mail, Instagram, Facebook, Linkedin, MessageCircle } from 'lucide-react';
 
 const SideMenuItem = ({ Icon, text, bgColor, width, ariaLabel, onClick }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -54,9 +54,15 @@ const SideMenu = () => {
             bgColor="bg-black"
             width="w-64"
             ariaLabel="Email us"
-            onClick={() =>
-              (window.location.href = 'mailto:Jettherm1991@gmail.com')
-            } // Redirect to email client
+          />
+        </div>
+        <div className="h-14 sm:w-full">
+          <SideMenuItem
+            Icon={MessageCircle}
+            text="WhatsApp"
+            bgColor="bg-green-500"
+            width="w-64 "
+            ariaLabel="WhatsApp"
           />
         </div>
         <div className="h-14 sm:w-full">
@@ -69,16 +75,7 @@ const SideMenu = () => {
             onClick={() => window.open('https://www.instagram.com/birjuchoudhary_cg?igsh=ZXdsMzNpaXl1NDNw')} // Redirect to Instagram
           />
         </div>
-        <div className="h-14 sm:w-full">
-          <SideMenuItem
-            Icon={Facebook}
-            text="Facebook"
-            bgColor="bg-blue-600"
-            width="w-64"
-            ariaLabel="Facebook"
-            onClick={() => window.open('https://facebook.com', '_blank')} // Redirect to Facebook
-          />
-        </div>
+        
         <div className="h-14 sm:w-full">
           <SideMenuItem
             Icon={Linkedin}

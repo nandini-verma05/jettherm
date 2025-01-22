@@ -25,17 +25,17 @@ const Card = ({ name, photo, quote }) => (
 const CardsContainer = () => {
   const cards = [
     {
-      name: 'Shri Birju Choudhary',
+      name: 'MR. Birju Choudhary',
       photo: '/api/placeholder/400/500',
       quote: 'Managing Director',
     },
     {
-      name: 'Shri Sanjay Choudhary',
+      name: 'MR. Sanjay Choudhary',
       photo: '/api/placeholder/400/500',
       quote: 'CEO',
     },
     {
-      name: 'Shri Abhishek Kumar',
+      name: 'MR. Abhishek Kumar',
       photo: '/api/placeholder/400/500',
       quote: 'Business & Execution Head',
     },
