@@ -35,7 +35,7 @@ const CardsContainer = () => {
       quote: 'CEO',
     },
     {
-      name: 'MR. Abhishek Kumar',
+      name: 'MR. Jitendra  Kumar',
       photo: '/api/placeholder/400/500',
       quote: 'Business & Execution Head',
     },
