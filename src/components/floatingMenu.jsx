@@ -71,15 +71,7 @@ const SideMenu = () => {
             ariaLabel="Instagram"
           />
         </div>
-        <div className="h-14 sm:w-full">
-          <SideMenuItem
-            Icon={Facebook}
-            text="Facebook"
-            bgColor="bg-blue-600"
-            width="w-64 "
-            ariaLabel="Facebook"
-          />
-        </div>
+        
         <div className="h-14 sm:w-full">
           <SideMenuItem
             Icon={Linkedin}
