@@ -1,10 +1,8 @@
+
 import React from 'react';
 import { Truck, Package, CircleDot, ArrowDown } from 'lucide-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSync } from '@fortawesome/free-solid-svg-icons';
-import img from "./assets/work13.jpeg"
-import img2 from "./assets/work7.jpeg";
-import img3 from "./assets/work6.jpeg";
 
 const ProcessNumber = ({ number }) => (
   <div className="relative">
@@ -67,19 +65,19 @@ const WorkProcess = () => {
       icon: Truck,
       title: "Material Unloading",
       description: "Differentiate the material and unload safely with respect to manpower and material as per installation to save time and ease intra-site transportation.",
-      image: img,
+      image: 'https://cloud.appwrite.io/v1/storage/buckets/6791ced30003cf1d6c04/files/67925d5d003b1437f4b8/view?project=6790c07f0018598d5209&project=6790c07f0018598d5209&mode=admin', // Replace with your bucket URL
     },
     {
       icon: Package,
       title: "Heavy Material Handling",
       description: "Use 2-3 hydras at the same time for damage-free unloading of heavy-weighted/valuable material.",
-      image: img2,
+      image: 'https://cloud.appwrite.io/v1/storage/buckets/6791ced30003cf1d6c04/files/67925d0600344c2c8333/view?project=6790c07f0018598d5209&project=6790c07f0018598d5209&mode=admin', // Replace with your bucket URL
     },
     {
       icon: CircleDot,
       title: "Efficient Container Management",
       description: "Stacking sequence in unloading of material from the container, we may unload 3 containers at a time with a single forklift.",
-      image: img3,
+      image: 'https://cloud.appwrite.io/v1/storage/buckets/6791ced30003cf1d6c04/files/67925cf7000bfc691a22/view?project=6790c07f0018598d5209&project=6790c07f0018598d5209&mode=admin', // Replace with your bucket URL
     },
   ];
 

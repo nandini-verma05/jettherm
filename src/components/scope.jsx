@@ -1,11 +1,10 @@
+
 import React from 'react';
 import { Building2, Wrench, Zap, ChevronRight } from 'lucide-react';
-import img from './images/15.jpeg'
-import img2 from './images/6.jpeg'
-import img3 from './images/3.jpeg'
-const ScopeCard = ({ title, items, icon, index ,imageUrl}) => {
+
+const ScopeCard = ({ title, items, icon, index, imageUrl }) => {
   const isEven = index % 2 === 0;
-  
+
   return (
     <div className="flex flex-col md:flex-row items-center gap-12 w-full max-w-5xl mx-auto">
       {/* Text Content - Always First on Mobile */}
@@ -14,11 +13,11 @@ const ScopeCard = ({ title, items, icon, index ,imageUrl}) => {
         <div className="relative shrink-0">
           <div className="absolute -inset-2 bg-blue-500/100 rounded-full blur-xl" />
           <div className="relative w-16 md:w-20 h-16 md:h-20 bg-white rounded-full shadow-lg flex items-center justify-center">
-            {React.cloneElement(icon, { 
-              className: "w-8 md:w-10 h-8 md:h-10 text-blue-600" 
+            {React.cloneElement(icon, {
+              className: "w-8 md:w-10 h-8 md:h-10 text-blue-600",
             })}
           </div>
-          
+
           {/* Connector Line - Only visible on desktop */}
           {index !== 2 && (
             <div className="hidden md:block absolute top-full left-1/2 w-1 h-24 bg-gradient-to-b from-blue-500 to-transparent -translate-x-1/2" />
@@ -30,7 +29,7 @@ const ScopeCard = ({ title, items, icon, index ,imageUrl}) => {
           <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
             <span>{title}</span>
           </h3>
-          
+
           <ul className="space-y-3">
             {items.map((item, idx) => (
               <li key={idx} className="flex items-start gap-3">
@@ -64,7 +63,7 @@ const Scope = () => {
       title: "Civil Scope",
       icon: <Building2 />,
       items: ["Pile Anchoring, Pile Cap", "Construction of Inverter Control Room"],
-      imageUrl :img
+      imageUrl: "https://cloud.appwrite.io/v1/storage/buckets/6790cdb90012e7e486a9/files/6793a9d600231b6619ac/view?project=6790c07f0018598d5209&project=6790c07f0018598d5209&mode=admin", // Replace with your bucket URL
     },
     {
       title: "Mechanical Scope",
@@ -77,7 +76,7 @@ const Scope = () => {
         "Fabrication",
         "All kinds of welding (e.g. Arc, Organic, Mig, Gas etc.)",
       ],
-      imageUrl :img2
+      imageUrl: "https://cloud.appwrite.io/v1/storage/buckets/6790cdb90012e7e486a9/files/6793a97c00012fc4df04/view?project=6790c07f0018598d5209&project=6790c07f0018598d5209&mode=admin", // Replace with your bucket URL
     },
     {
       title: "Electrical Scope",
@@ -87,7 +86,7 @@ const Scope = () => {
         "Connection of junction boxes, Erection of SRCB with foundation",
         "All DC side activities",
       ],
-      imageUrl :img3
+      imageUrl: "https://cloud.appwrite.io/v1/storage/buckets/6790cdb90012e7e486a9/files/6793a95f00105703073d/view?project=6790c07f0018598d5209&project=6790c07f0018598d5209&mode=admin", // Replace with your bucket URL
     },
   ];
 
@@ -99,7 +98,7 @@ const Scope = () => {
           <div className="inline-flex items-center justify-center w-16 md:w-20 h-16 md:h-20 rounded-full bg-blue-600/10 mb-6 md:mb-8">
             <Wrench className="w-8 md:w-10 h-8 md:h-10 text-blue-500" />
           </div>
-          
+
           <h2 className="text-4xl md:text-5xl font-bold text-black mb-4 md:mb-6">
             Our Scope of Work
           </h2>

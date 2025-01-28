@@ -54,6 +54,7 @@ const SideMenu = () => {
             bgColor="bg-black"
             width="w-64"
             ariaLabel="Email us"
+            onClick={() => (window.location.href = "mailto:Jettherm1991@gmail.com")} // Redirect to email client
           />
         </div>
         <div className="h-14 sm:w-full">
@@ -63,6 +64,11 @@ const SideMenu = () => {
             bgColor="bg-green-500"
             width="w-64 "
             ariaLabel="WhatsApp"
+            onClick={() =>
+              window.open(
+                "https://wa.me/7724068116?text=Hello! I would like to inquire about your services."
+              )
+            } // Redirect to WhatsApp
           />
         </div>
         <div className="h-14 sm:w-full">
@@ -72,7 +78,7 @@ const SideMenu = () => {
             bgColor="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500"
             width="w-64"
             ariaLabel="Instagram"
-            onClick={() => window.open('https://www.instagram.com/birjuchoudhary_cg?igsh=ZXdsMzNpaXl1NDNw')} // Redirect to Instagram
+            onClick={() => window.open('https://www.instagram.com/jettherm_solar?igsh=MWhjbnE2OGNxYnNtbg==')} // Redirect to Instagram
           />
         </div>
         
@@ -83,7 +89,7 @@ const SideMenu = () => {
             bgColor="bg-blue-700"
             width="w-64"
             ariaLabel="LinkedIn"
-            onClick={() => window.open('https://www.linkedin.com/in/jayprakash-parida-674ba3242/')} // Redirect to LinkedIn
+            onClick={() => window.open('https://www.linkedin.com/in/birju-choudhary-7420b71aa?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app')} // Redirect to LinkedIn
           />
         </div>
       </div>

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserTie } from '@fortawesome/free-solid-svg-icons';
@@ -17,40 +18,39 @@ const Card = ({ name, photo, quote }) => (
   </div>
 );
 
-
-
-
-
-
 const CardsContainer = () => {
+  // Replace with your bucket URL
+  const bucketUrl = 'https://cloud.appwrite.io/console/project-6790c07f0018598d5209/storage/bucket-6790cdb90012e7e486a9'; 
+
   const cards = [
     {
       name: 'MR. Birju Choudhary',
-      photo: '/api/placeholder/400/500',
+      photo: `https://cloud.appwrite.io/v1/storage/buckets/6790cdb90012e7e486a9/files/6798ef40002fc47f5b7f/view?project=6790c07f0018598d5209&project=6790c07f0018598d5209&mode=admin`,
       quote: 'Managing Director',
     },
     {
       name: 'MR. Sanjay Choudhary',
-      photo: '/api/placeholder/400/500',
+      photo: `https://cloud.appwrite.io/v1/storage/buckets/6790cdb90012e7e486a9/files/6798ea64001b3e815d37/view?project=6790c07f0018598d5209&project=6790c07f0018598d5209&mode=admin`,
       quote: 'CEO',
     },
     {
-      name: 'MR. Abhishek Kumar',
-      photo: '/api/placeholder/400/500',
+      name: 'MR. Jitendra Kumar',
+      photo: `https://cloud.appwrite.io/v1/storage/buckets/6790cdb90012e7e486a9/files/6798ea700034686faf92/view?project=6790c07f0018598d5209&project=6790c07f0018598d5209&mode=admin`,
       quote: 'Business & Execution Head',
     },
   ];
 
   return (
-    <div className="relative  py-16 px-4 mb-12 overflow-hidden">
-     
+    <div className="relative py-16 px-4 mb-12 overflow-hidden">
       <div className="container mx-auto max-w-6xl">
         {/* Section Header */}
         <div className="text-center mb-16">
-        <FontAwesomeIcon icon={faUserTie} className="text-2xl text-primary text-blue-500 w-12 h-12" />
+          <FontAwesomeIcon
+            icon={faUserTie}
+            className="text-2xl text-primary text-blue-500 w-12 h-12"
+          />
           <h1 className="text-4xl font-bold text-black mb-4">Our Management</h1>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-400 via-blue-600 to-blue-400 mx-auto mt-4 rounded-full" />
-          
         </div>
 
         {/* Cards Layout */}
@@ -67,7 +67,6 @@ const CardsContainer = () => {
           ))}
         </div>
       </div>
-   
     </div>
   );
 };

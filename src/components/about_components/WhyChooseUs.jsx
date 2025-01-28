@@ -1,11 +1,6 @@
+
 import React, { useEffect, useState } from 'react';
 import { Clock, Users, Briefcase, CheckCircle, DollarSign, Building2 } from 'lucide-react';
-import img1 from '../assets/a.jpg'
-import img2 from '../assets/b.jpg'
-import img3 from '../assets/c.jpg'
-import img4 from '../assets/work10.jpeg'
-import img5 from '../assets/work11.jpeg'
-import img6 from '../assets/work12.jpeg'
 import { useInView } from 'react-intersection-observer';
 
 const CircularFeatureLayout = ({ features }) => {
@@ -17,9 +12,9 @@ const CircularFeatureLayout = ({ features }) => {
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
     window.addEventListener('resize', handleResize);
-    
+
     const timer = setTimeout(() => setIsVisible(true), 100);
-    
+
     return () => {
       window.removeEventListener('resize', handleResize);
       clearTimeout(timer);
@@ -71,31 +66,27 @@ const CircularFeatureLayout = ({ features }) => {
 
   const circumference = 2 * Math.PI * outerCircleRadius;
 
-  const [ inView] = useInView({
+  const [inView] = useInView({
     triggerOnce: false, // Allow repeated triggers
     threshold: 0.1, // Trigger when 20% of the element is visible
   });
 
   const [hasAnimated, setHasAnimated] = useState(false);
 
-  // Update animation state
   useEffect(() => {
     if (inView) {
-      setHasAnimated(true); // Component enters view
+      setHasAnimated(true);
     } else if (!inView && hasAnimated) {
-      setHasAnimated(false); // Reset if component exits view
+      setHasAnimated(false);
     }
   }, [inView, hasAnimated]);
 
   return (
-    
-    <div className="w-full relative   overflow-hidden">
-    
-      
+    <div className="w-full relative overflow-hidden">
       <div className="aspect-square relative w-full h-full px-4">
-        <svg 
-          className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full" 
-          viewBox="0 0 100 100" 
+        <svg
+          className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full"
+          viewBox="0 0 100 100"
           preserveAspectRatio="xMidYMid meet"
         >
           <circle
@@ -112,7 +103,7 @@ const CircularFeatureLayout = ({ features }) => {
         </svg>
 
         <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-          <div 
+          <div
             className={`${centerCircleSize} bg-white border border-blue-600 rounded-full flex items-center justify-center shadow-lg backdrop-blur-sm
               ${isVisible ? 'scale-100 opacity-100' : 'scale-50 opacity-0'} 
               transition-all duration-700 ease-out`}
@@ -141,18 +132,18 @@ const CircularFeatureLayout = ({ features }) => {
               >
                 <div className={`relative ${cardHeight} rounded-xl border border-blue-600 shadow-sm hover:shadow-md 
                   transition-all duration-300 overflow-hidden group hover:scale-105 hover:-translate-y-1`}>
-                  <img 
+                  <img
                     src={feature.imageSrc}
                     alt={feature.title}
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  
-                  <div className="absolute inset-0 bg-gradient-to-t from-blue-900/90 to-blue-900/40 group-hover:from-blue-900/95 group-hover:to-blue-900/50 transition-all duration-300"/>
-                  
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-blue-900/90 to-blue-900/40 group-hover:from-blue-900/95 group-hover:to-blue-900/50 transition-all duration-300" />
+
                   <div className="relative h-full p-3 flex flex-col justify-end">
                     <div className="flex items-center gap-2 mb-1">
                       <div className="text-white">
-                        {React.cloneElement(feature.icon, { 
+                        {React.cloneElement(feature.icon, {
                           size: windowWidth < 640 ? 16 : windowWidth < 1024 ? 18 : 20,
                           className: "transition-transform duration-300 group-hover:rotate-12"
                         })}
@@ -175,47 +166,48 @@ const CircularFeatureLayout = ({ features }) => {
   );
 };
 
-
-
-const WhyChooseUs = ({windowWidth}) => {
+const WhyChooseUs = ({ windowWidth }) => {
+  
   const features = [
-    { 
-      icon: <Clock />, 
-      title: 'Fast Delivery', 
+    {
+      icon: <Clock />,
+      title: 'Fast Delivery',
       description: 'Quick & reliable service delivery.',
-      imageSrc: img1 // Fast delivery image
+      imageSrc: 'https://cloud.appwrite.io/v1/storage/buckets/6791ced30003cf1d6c04/files/6791cf0b0021909dfc56/view?project=6790c07f0018598d5209&project=6790c07f0018598d5209&mode=admin', // Update with your bucket's URL
     },
-    { 
-      icon: <Users />, 
-      title: 'Expert Team', 
+    {
+      icon: <Users />,
+      title: 'Expert Team',
       description: 'Skilled professionals at work.',
-      imageSrc: img2 // Team image
+      imageSrc: 'https://cloud.appwrite.io/v1/storage/buckets/6791ced30003cf1d6c04/files/6791cf78003a1711cd54/view?project=6790c07f0018598d5209&project=6790c07f0018598d5209&mode=admin',
     },
-    { 
-      icon: <Briefcase />, 
-      title: 'Professional', 
+    {
+      icon: <Briefcase />,
+      title: 'Professional',
       description: 'High standards & ethics.',
-      imageSrc: img3 // Professional image
+      imageSrc: 'https://cloud.appwrite.io/v1/storage/buckets/6791ced30003cf1d6c04/files/67925b29003db3759a85/view?project=6790c07f0018598d5209&project=6790c07f0018598d5209&mode=admin',
     },
-    { 
-      icon: <CheckCircle />, 
-      title: 'Guaranteed', 
+    {
+      icon: <CheckCircle />,
+      title: 'Guaranteed',
       description: 'Quality you can trust.',
-      imageSrc: img4 // Quality guarantee image
+      imageSrc: 'https://cloud.appwrite.io/v1/storage/buckets/6791ced30003cf1d6c04/files/67925d2e001d480f17ff/view?project=6790c07f0018598d5209&project=6790c07f0018598d5209&mode=admin',
     },
-    { 
-      icon: <DollarSign />, 
-      title: 'Best Value', 
+    {
+      icon: <DollarSign />,
+      title: 'Best Value',
       description: 'Competitive & transparent pricing.',
-      imageSrc:img5 // Value image
+      imageSrc: 'https://cloud.appwrite.io/v1/storage/buckets/6791ced30003cf1d6c04/files/67925d4000314d983806/view?project=6790c07f0018598d5209&project=6790c07f0018598d5209&mode=admin',
     },
-    { 
-      icon: <Building2 />, 
-      title: 'Scale Ready', 
+    {
+      icon: <Building2 />,
+      title: 'Scale Ready',
       description: 'Solutions that grow with you.',
-      imageSrc: img6 // Scalability image
-    }
+      imageSrc: 'https://cloud.appwrite.io/v1/storage/buckets/6791ced30003cf1d6c04/files/67925d50001dad197699/view?project=6790c07f0018598d5209&project=6790c07f0018598d5209&mode=admin',
+    },
   ];
+  
+
   const MobileLayout = () => (
     <div className="flex flex-col space-y-4 w-full">
       {features.map((feature, index) => (
@@ -240,22 +232,20 @@ const WhyChooseUs = ({windowWidth}) => {
               </div>
               <h4 className="text-sm sm:text-base font-medium text-white">
                 {feature.title}
-                </h4>
-              </div>
-              <p className="text-xs text-blue-100 leading-relaxed">
-                {feature.description}
-              </p>
+              </h4>
             </div>
+            <p className="text-xs text-blue-100 leading-relaxed">
+              {feature.description}
+            </p>
           </div>
-        ))}
-      </div>
-    );
+        </div>
+      ))}
+    </div>
+  );
 
   return (
-    <div className="overflow-hidden min-h-screen  py-12 px-4 sm:px-6 lg:px-8">
-         
-     {windowWidth < 640 ? <MobileLayout /> : <CircularFeatureLayout features={features} />}
-   
+    <div className="overflow-hidden min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+      {windowWidth < 640 ? <MobileLayout /> : <CircularFeatureLayout features={features} />}
     </div>
   );
 };

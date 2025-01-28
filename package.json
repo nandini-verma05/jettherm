@@ -8,6 +8,7 @@
     "@fortawesome/free-regular-svg-icons": "^6.7.2",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "appwrite": "^16.1.0",
     "autoprefixer": "^10.4.20",
     "cra-template": "1.2.0",
     "frame": "^1.0.0-alpha.2",

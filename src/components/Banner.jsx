@@ -1,11 +1,7 @@
+
 import React, { useState, useEffect } from 'react';
-import pic1 from './assets/pic1.jpg';
-import pic2 from './assets/pic2.jpg';
-import pic3 from './assets/pic3.jpg';
-import pic4 from './assets/pic4.jpg';
+import { storage } from './appwrite_config'; // Import Appwrite storage configuration
 
-
-const images = [pic1, pic2, pic3,pic4];
 const quotes = [
   "The Power Solar journey at a glance, a history rich with experience and achievements.",
   "Harness the power of the sun for a brighter future.",
@@ -15,6 +11,30 @@ const quotes = [
 const Banner = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [images, setImages] = useState([]);
+
+  useEffect(() => {
+    const fetchImages = async () => {
+      try {
+        // Replace these with your actual bucket ID and file IDs
+        const bucketId = "6791ced30003cf1d6c04";
+        const fileIds = ["67925bec001c8b3ccc87", "67925bfc0026bc39994d", "67925c140003c36f2411", "67925c24002e14b613ee"];
+
+        const imageUrls = await Promise.all(
+          fileIds.map(async (fileId) => {
+            const imageUrl = await storage.getFilePreview(bucketId, fileId);
+            return imageUrl;
+          })
+        );
+
+        setImages(imageUrls);
+      } catch (error) {
+        console.error("Error fetching images:", error);
+      }
+    };
+
+    fetchImages();
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -26,7 +46,7 @@ const Banner = () => {
     }, 5000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [images.length]);
 
   return (
     <div className="sticky h-screen overflow-hidden px-0 py-0">
@@ -54,7 +74,7 @@ const Banner = () => {
             {/* Decorative elements */}
             <div className="absolute -left-8 -top-8 w-16 h-16 border-t-2 border-l-2 border-blue-400 opacity-60" />
             <div className="absolute -right-8 -bottom-8 w-16 h-16 border-b-2 border-r-2 border-red-400 opacity-60" />
-            
+
             <h1 className="font-['Orbitron'] text-5xl md:text-7xl font-bold drop-shadow-lg">
               <span className="text-blue-500 hover:text-blue-400 transition-colors">JET</span>
               <span className="text-red-500 hover:text-red-400 transition-colors">THERM</span>

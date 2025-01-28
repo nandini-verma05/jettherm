@@ -1,5 +1,6 @@
+
 import React from 'react';
-import { FaFacebook, FaInstagram, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
+import { FaInstagram, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -14,15 +15,10 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Quick Links */}
-         
-
           {/* Social Media */}
           <div>
             <h4 className="text-lg font-semibold text-gray-100">Follow Us</h4>
             <div className="flex space-x-4 mt-4">
-              
-             
               <a href="https://instagram.com" className="text-gray-400 hover:text-pink-500">
                 <FaInstagram size={24} />
               </a>
@@ -35,24 +31,31 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Contact Info */}
-         
+          {/* Address */}
           <div>
-            <h4 className="text-lg font-semibold text-gray-100">Adress</h4>
-            <p className="text-gray-400 mt-4">Registered Office:- Plot No 8/22,
-               Jawahar Nagar, Post - Supela,
-                Bhilai-490023, Dist - Durg, 
-                Chhattisgarh - India</p>
-            
+            <h4 className="text-lg font-semibold text-gray-100">Address</h4>
+            <p className="text-gray-400 mt-4">
+              Registered Office: Plot No 8/22, Jawahar Nagar, Post - Supela, Bhilai-490023, Dist - Durg, Chhattisgarh - India
+            </p>
           </div>
         </div>
       </div>
-      
 
       {/* Bottom copyright section */}
       <div className="bg-gray-800 py-4 mt-8">
-        <div className="container mx-auto text-center text-gray-400">
+        <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center text-center text-gray-400 text-sm">
           <p>&copy; 2024 JETTHERM. All rights reserved.</p>
+          <p className="mt-2 sm:mt-0">
+          Developed with ❤️ by 
+            <a href="https://www.linkedin.com/in/jayprakash-parida-674ba3242/" className="hover:underline text-gray-300 ml-1">
+              Jayprakash Parida
+            </a> 
+            {" "}
+            and 
+            <a href="https://www.linkedin.com/in/nandini-singh-verma-91a777267/" className="hover:underline text-gray-300 ml-1">
+              Nandini Singh Verma
+            </a>.
+          </p>
         </div>
       </div>
     </footer>
@@ -60,3 +63,4 @@ const Footer = () => {
 };
 
 export default Footer;
+

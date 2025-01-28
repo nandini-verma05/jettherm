@@ -76,29 +76,6 @@ const ContactForm = () => {
     return Object.keys(newErrors).length === 0;
   };
   
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-    
-  //   if (validateForm()) {
-  //     setLoading(true);
-      
-  //     // Simulate API call
-  //     await new Promise(resolve => setTimeout(resolve, 1000));
-      
-  //     console.log('Form submitted:', formData);
-  //     setSubmitted(true);
-  //     setLoading(false);
-      
-  //     setFormData({
-  //       name: '',
-  //       email: '',
-  //       subject: '',
-  //       message: ''
-  //     });
-      
-  //     setTimeout(() => setSubmitted(false), 5000);
-  //   }
-  // };
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (validateForm()) {

@@ -1,26 +1,21 @@
+
 import React, { useState, useEffect } from 'react';
 import { faUserFriends } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import img1 from './assets/team/1.jpeg'
-import img2 from './assets/team/2.jpeg'
-import img3 from './assets/team/3.jpeg'
-import img4 from './assets/team/4.jpeg'
-import img5 from './assets/team/5.jpeg'
-import img6 from './assets/team/6.jpeg'
 
 const SlidingCards = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  // Updated clients with image URLs pointing to the bucket
   const clients = [
-    {  quote: 'Innovation drives success!', image: img1 },
-    {  quote: 'Excellence in every project.', image: img2 },
-    {  quote: 'Building the future together.', image: img3 },
-    {  quote: 'Transforming ideas into reality.', image: img4 },
-    {  quote: 'Committed to quality service.', image: img5 },
-    {  quote: 'Your success is our priority.', image: img6 },
+    { quote: 'Innovation drives success!', image: 'https://cloud.appwrite.io/v1/storage/buckets/6790cdb90012e7e486a9/files/6790cdd300057677f120/view?project=6790c07f0018598d5209&project=6790c07f0018598d5209&mode=admin' },
+    { quote: 'Excellence in every project.', image: 'https://cloud.appwrite.io/v1/storage/buckets/6790cdb90012e7e486a9/files/6790cde90030644445ed/view?project=6790c07f0018598d5209&project=6790c07f0018598d5209&mode=admin' },
+    { quote: 'Building the future together.', image: 'https://cloud.appwrite.io/v1/storage/buckets/6790cdb90012e7e486a9/files/6790cdf8002d08a0bb7e/view?project=6790c07f0018598d5209&project=6790c07f0018598d5209&mode=admin' },
+    { quote: 'Transforming ideas into reality.', image: 'https://cloud.appwrite.io/v1/storage/buckets/6790cdb90012e7e486a9/files/6790ce0a0037e3e74079/view?project=6790c07f0018598d5209&project=6790c07f0018598d5209&mode=admin' },
+    { quote: 'Committed to quality service.', image: 'https://cloud.appwrite.io/v1/storage/buckets/6790cdb90012e7e486a9/files/6790ce18001302a30da1/view?project=6790c07f0018598d5209&project=6790c07f0018598d5209&mode=admin' },
+    { quote: 'Your success is our priority.', image: 'https://cloud.appwrite.io/v1/storage/buckets/6790cdb90012e7e486a9/files/6790ce26003516adc530/view?project=6790c07f0018598d5209&project=6790c07f0018598d5209&mode=admin' },
   ];
 
-  
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % clients.length);
@@ -34,14 +29,14 @@ const SlidingCards = () => {
     let zIndex = 0;
     let opacity = 1;
 
-    if (diff === 0) { // Current card
+    if (diff === 0) {
       transform = 'translateX(-50%) scale(1.1)';
       zIndex = 3;
-    } else if (diff === 1 || diff === clients.length - 1) { // Adjacent cards
+    } else if (diff === 1 || diff === clients.length - 1) {
       transform = `translateX(${diff === 1 ? '20%' : '-120%'}) scale(0.9) translateZ(-50px)`;
       zIndex = 2;
       opacity = 0.7;
-    } else { // Other cards
+    } else {
       transform = `translateX(${diff < Math.floor(clients.length / 2) ? '150%' : '-150%'}) scale(0.8) translateZ(-100px)`;
       zIndex = 1;
       opacity = 0;
@@ -51,7 +46,7 @@ const SlidingCards = () => {
       transform,
       zIndex,
       opacity,
-      transition: 'all 0.5s ease-in-out'
+      transition: 'all 0.5s ease-in-out',
     };
   };
 
@@ -62,7 +57,7 @@ const SlidingCards = () => {
           icon={faUserFriends}
           className="w-12 h-8 mx-auto mb-2 text-blue-500 block"
         />
-        
+
         <h1 className="text-3xl font-bold text-center mb-6 text-gray-800">Our Team</h1>
         <div className="w-24 h-1 bg-gradient-to-r from-blue-400 via-blue-600 to-blue-400 mx-auto mt-4 mb-12 rounded-full" />
 
@@ -70,7 +65,7 @@ const SlidingCards = () => {
           <div className="absolute w-full top-0 left-1/2">
             {clients.map((client, index) => (
               <div
-                key={client.id}
+                key={index}
                 className="absolute w-[500px] h-[500px] top-0 left-0 cursor-pointer rounded-xl overflow-hidden"
                 style={{
                   ...getCardStyle(index),
@@ -82,7 +77,6 @@ const SlidingCards = () => {
                 onClick={() => setCurrentIndex(index)}
               >
                 <div className="w-full h-full bg-gradient-to-b from-black/40 to-black/70 p-8 flex flex-col justify-center">
-                  <h2 className="text-3xl font-bold text-white mb-4 text-center">{client.name}</h2>
                   <p className="text-lg text-white/90 text-center italic">{client.quote}</p>
                 </div>
               </div>
