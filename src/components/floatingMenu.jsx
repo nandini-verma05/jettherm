@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Phone, Mail, Instagram, Facebook, Linkedin, MessageCircle } from 'lucide-react';
+import { Phone, Mail, Instagram, Linkedin, MessageCircle } from 'lucide-react';
 
 const SideMenuItem = ({ Icon, text, bgColor, width, ariaLabel, onClick }) => {
   const [isHovered, setIsHovered] = useState(false);
