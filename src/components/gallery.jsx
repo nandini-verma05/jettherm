@@ -7,21 +7,21 @@ import { Image } from "lucide-react";
 
 // List of image URLs from your bucket
 const images = [
-  "https://cloud.appwrite.io/v1/storage/buckets/6790cdb90012e7e486a9/files/6793a94c0025a8d0ffb8/view?project=6790c07f0018598d5209&project=6790c07f0018598d5209&mode=admin",
-  "https://cloud.appwrite.io/v1/storage/buckets/6790cdb90012e7e486a9/files/6793a95600312815b995/view?project=6790c07f0018598d5209&project=6790c07f0018598d5209&mode=admin",
-  "https://cloud.appwrite.io/v1/storage/buckets/6790cdb90012e7e486a9/files/6793a95f00105703073d/view?project=6790c07f0018598d5209&project=6790c07f0018598d5209&mode=admin",
-  "https://cloud.appwrite.io/v1/storage/buckets/6790cdb90012e7e486a9/files/6793a9690030c5839a19/view?project=6790c07f0018598d5209&project=6790c07f0018598d5209&mode=admin",
-  "https://cloud.appwrite.io/v1/storage/buckets/6790cdb90012e7e486a9/files/6793a973000c82ac7830/view?project=6790c07f0018598d5209&project=6790c07f0018598d5209&mode=admin",
-  "https://cloud.appwrite.io/v1/storage/buckets/6790cdb90012e7e486a9/files/6793a97c00012fc4df04/view?project=6790c07f0018598d5209&project=6790c07f0018598d5209&mode=admin",
-  "https://cloud.appwrite.io/v1/storage/buckets/6790cdb90012e7e486a9/files/6793a986001d9fb8d843/view?project=6790c07f0018598d5209&project=6790c07f0018598d5209&mode=admin",
-  "https://cloud.appwrite.io/v1/storage/buckets/6790cdb90012e7e486a9/files/6793a99300209092be3d/view?project=6790c07f0018598d5209&project=6790c07f0018598d5209&mode=admin",
-  "https://cloud.appwrite.io/v1/storage/buckets/6790cdb90012e7e486a9/files/6793a99300209092be3d/view?project=6790c07f0018598d5209&project=6790c07f0018598d5209&mode=admin",
-  "https://cloud.appwrite.io/v1/storage/buckets/6790cdb90012e7e486a9/files/6793a99c003bd3587591/view?project=6790c07f0018598d5209&project=6790c07f0018598d5209&mode=admin",
-  "https://cloud.appwrite.io/v1/storage/buckets/6790cdb90012e7e486a9/files/6793a9a5003459eb9076/view?project=6790c07f0018598d5209&project=6790c07f0018598d5209&mode=admin",
-  "https://cloud.appwrite.io/v1/storage/buckets/6790cdb90012e7e486a9/files/6793a9af001537401d51/view?project=6790c07f0018598d5209&project=6790c07f0018598d5209&mode=admin",
-  "https://cloud.appwrite.io/v1/storage/buckets/6790cdb90012e7e486a9/files/6793a9b800143a5dc383/view?project=6790c07f0018598d5209&project=6790c07f0018598d5209&mode=admin",
-  "https://cloud.appwrite.io/v1/storage/buckets/6790cdb90012e7e486a9/files/6793a9c1003753381885/view?project=6790c07f0018598d5209&project=6790c07f0018598d5209&mode=admin",
-  "https://cloud.appwrite.io/v1/storage/buckets/6790cdb90012e7e486a9/files/6793a9cd001678536e14/view?project=6790c07f0018598d5209&project=6790c07f0018598d5209&mode=admin",
+  "https://cloud.appwrite.io/v1/storage/buckets/6791ced30003cf1d6c04/files/67a36b0b001e319b1131/view?project=6790c07f0018598d5209&mode=admin",
+  "https://cloud.appwrite.io/v1/storage/buckets/6791ced30003cf1d6c04/files/67a36b0b001e319b1131/view?project=6790c07f0018598d5209&mode=admin",
+  "https://cloud.appwrite.io/v1/storage/buckets/6791ced30003cf1d6c04/files/67a36fb800161b550444/view?project=6790c07f0018598d5209&mode=admin",
+  "https://cloud.appwrite.io/v1/storage/buckets/6791ced30003cf1d6c04/files/67a36fc30006ea4ca820/view?project=6790c07f0018598d5209&mode=admin",
+  "https://cloud.appwrite.io/v1/storage/buckets/6791ced30003cf1d6c04/files/67a370030038ef2064b3/view?project=6790c07f0018598d5209&mode=admin",
+  "https://cloud.appwrite.io/v1/storage/buckets/6791ced30003cf1d6c04/files/67a3700f00312f39df79/view?project=6790c07f0018598d5209&mode=admin",
+  "https://cloud.appwrite.io/v1/storage/buckets/6791ced30003cf1d6c04/files/67a3701d00055543e7dc/view?project=6790c07f0018598d5209&mode=admin",
+  "https://cloud.appwrite.io/v1/storage/buckets/6791ced30003cf1d6c04/files/67a3702a000f5127d273/view?project=6790c07f0018598d5209&mode=admin",
+  "https://cloud.appwrite.io/v1/storage/buckets/6791ced30003cf1d6c04/files/67a3703a00193d9c502d/view?project=6790c07f0018598d5209&mode=admin",
+  "https://cloud.appwrite.io/v1/storage/buckets/6791ced30003cf1d6c04/files/67a370480005c1e34ce8/view?project=6790c07f0018598d5209&mode=admin",
+  "https://cloud.appwrite.io/v1/storage/buckets/6791ced30003cf1d6c04/files/67a37054002ff6cbd6ce/view?project=6790c07f0018598d5209&mode=admin",
+  "https://cloud.appwrite.io/v1/storage/buckets/6791ced30003cf1d6c04/files/67a370750038c3498722/view?project=6790c07f0018598d5209&mode=admin",
+  "https://cloud.appwrite.io/v1/storage/buckets/6791ced30003cf1d6c04/files/67a37082002453a7d0fd/view?project=6790c07f0018598d5209&mode=admin",
+  "https://cloud.appwrite.io/v1/storage/buckets/6791ced30003cf1d6c04/files/67a3708f0012534370b2/view?project=6790c07f0018598d5209&mode=admin",
+  "https://cloud.appwrite.io/v1/storage/buckets/6791ced30003cf1d6c04/files/67a3701d00055543e7dc/view?project=6790c07f0018598d5209&mode=admin",
 
 ];
 

@@ -20,22 +20,22 @@ const Card = ({ name, photo, quote }) => (
 
 const CardsContainer = () => {
   // Replace with your bucket URL
-  const bucketUrl = 'https://cloud.appwrite.io/console/project-6790c07f0018598d5209/storage/bucket-6790cdb90012e7e486a9'; 
+  const bucketUrl = 'https://cloud.appwrite.io/console/project-6790c07f0018598d5209/storage/bucket-6791ced30003cf1d6c04'; 
 
   const cards = [
     {
       name: 'MR. Birju Choudhary',
-      photo: `https://cloud.appwrite.io/v1/storage/buckets/6790cdb90012e7e486a9/files/6798ef40002fc47f5b7f/view?project=6790c07f0018598d5209&project=6790c07f0018598d5209&mode=admin`,
+      photo: `https://cloud.appwrite.io/v1/storage/buckets/6791ced30003cf1d6c04/files/67a269b1000ed032a4fe/view?project=6790c07f0018598d5209&mode=admin`,
       quote: 'Managing Director',
     },
     {
       name: 'MR. Sanjay Choudhary',
-      photo: `https://cloud.appwrite.io/v1/storage/buckets/6790cdb90012e7e486a9/files/6798ea64001b3e815d37/view?project=6790c07f0018598d5209&project=6790c07f0018598d5209&mode=admin`,
+      photo: `https://cloud.appwrite.io/v1/storage/buckets/6791ced30003cf1d6c04/files/67a26997002f75106a90/view?project=6790c07f0018598d5209&mode=admin`,
       quote: 'CEO',
     },
     {
       name: 'MR. Jitendra Kumar',
-      photo: `https://cloud.appwrite.io/v1/storage/buckets/6790cdb90012e7e486a9/files/6798ea700034686faf92/view?project=6790c07f0018598d5209&project=6790c07f0018598d5209&mode=admin`,
+      photo: `https://cloud.appwrite.io/v1/storage/buckets/6791ced30003cf1d6c04/files/67a269a4001215bbbc15/view?project=6790c07f0018598d5209&mode=admin`,
       quote: 'Business & Execution Head',
     },
   ];

@@ -8,12 +8,12 @@ const SlidingCards = () => {
 
   // Updated clients with image URLs pointing to the bucket
   const clients = [
-    { quote: 'Innovation drives success!', image: 'https://cloud.appwrite.io/v1/storage/buckets/6790cdb90012e7e486a9/files/6790cdd300057677f120/view?project=6790c07f0018598d5209&project=6790c07f0018598d5209&mode=admin' },
-    { quote: 'Excellence in every project.', image: 'https://cloud.appwrite.io/v1/storage/buckets/6790cdb90012e7e486a9/files/6790cde90030644445ed/view?project=6790c07f0018598d5209&project=6790c07f0018598d5209&mode=admin' },
-    { quote: 'Building the future together.', image: 'https://cloud.appwrite.io/v1/storage/buckets/6790cdb90012e7e486a9/files/6790cdf8002d08a0bb7e/view?project=6790c07f0018598d5209&project=6790c07f0018598d5209&mode=admin' },
-    { quote: 'Transforming ideas into reality.', image: 'https://cloud.appwrite.io/v1/storage/buckets/6790cdb90012e7e486a9/files/6790ce0a0037e3e74079/view?project=6790c07f0018598d5209&project=6790c07f0018598d5209&mode=admin' },
-    { quote: 'Committed to quality service.', image: 'https://cloud.appwrite.io/v1/storage/buckets/6790cdb90012e7e486a9/files/6790ce18001302a30da1/view?project=6790c07f0018598d5209&project=6790c07f0018598d5209&mode=admin' },
-    { quote: 'Your success is our priority.', image: 'https://cloud.appwrite.io/v1/storage/buckets/6790cdb90012e7e486a9/files/6790ce26003516adc530/view?project=6790c07f0018598d5209&project=6790c07f0018598d5209&mode=admin' },
+    { quote: 'Innovation drives success!', image: 'https://cloud.appwrite.io/v1/storage/buckets/6791ced30003cf1d6c04/files/67a36d65001127da707b/view?project=6790c07f0018598d5209&mode=admin' },
+    { quote: 'Excellence in every project.', image: 'https://cloud.appwrite.io/v1/storage/buckets/6791ced30003cf1d6c04/files/67a36d7200032822d172/view?project=6790c07f0018598d5209&mode=admin' },
+    { quote: 'Building the future together.', image: 'https://cloud.appwrite.io/v1/storage/buckets/6791ced30003cf1d6c04/files/67a36d7f002bbf8d07ed/view?project=6790c07f0018598d5209&mode=admin' },
+    { quote: 'Transforming ideas into reality.', image: 'https://cloud.appwrite.io/v1/storage/buckets/6791ced30003cf1d6c04/files/67a36d8b00129bf44a70/view?project=6790c07f0018598d5209&mode=admin' },
+    { quote: 'Committed to quality service.', image: 'https://cloud.appwrite.io/v1/storage/buckets/6791ced30003cf1d6c04/files/67a36d99002493f40b00/view?project=6790c07f0018598d5209&mode=admin' },
+    { quote: 'Your success is our priority.', image: 'https://cloud.appwrite.io/v1/storage/buckets/6791ced30003cf1d6c04/files/67a36da80023bbf43a2a/view?project=6790c07f0018598d5209&mode=admin' },
   ];
 
   useEffect(() => {

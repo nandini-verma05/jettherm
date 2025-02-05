@@ -93,6 +93,12 @@ const Blogs = () => {
       description:
         "Have installed module mounting structures and securely mounted solar panels, ensuring precise alignment for optimal energy generation. Our team focused on stability and durability, guaranteeing the panels are well-positioned to maximize sunlight absorption.",
     },
+    {
+      fileId: "67a374890010f76cc2ac",
+      title: "Transmission Line",
+      description:
+        "Have worked on the transmission lines for a solar power system, ensuring efficient electricity transfer from the solar farm to the grid. My work involved designing, installing, and maintaining high-voltage lines while optimizing for minimal losses. I focused on factors like distance, voltage levels, and grid integration to ensure reliable and efficient power distribution.",
+    },
   ];
 
   useEffect(() => {

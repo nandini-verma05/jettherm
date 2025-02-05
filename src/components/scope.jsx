@@ -63,7 +63,7 @@ const Scope = () => {
       title: "Civil Scope",
       icon: <Building2 />,
       items: ["Pile Anchoring, Pile Cap", "Construction of Inverter Control Room"],
-      imageUrl: "https://cloud.appwrite.io/v1/storage/buckets/6790cdb90012e7e486a9/files/6793a9d600231b6619ac/view?project=6790c07f0018598d5209&project=6790c07f0018598d5209&mode=admin", // Replace with your bucket URL
+      imageUrl: "https://cloud.appwrite.io/v1/storage/buckets/6791ced30003cf1d6c04/files/67a36acb00279efe37d0/view?project=6790c07f0018598d5209&mode=admin", // Replace with your bucket URL
     },
     {
       title: "Mechanical Scope",
@@ -76,7 +76,7 @@ const Scope = () => {
         "Fabrication",
         "All kinds of welding (e.g. Arc, Organic, Mig, Gas etc.)",
       ],
-      imageUrl: "https://cloud.appwrite.io/v1/storage/buckets/6790cdb90012e7e486a9/files/6793a97c00012fc4df04/view?project=6790c07f0018598d5209&project=6790c07f0018598d5209&mode=admin", // Replace with your bucket URL
+      imageUrl: "https://cloud.appwrite.io/v1/storage/buckets/6791ced30003cf1d6c04/files/67a36b0b001e319b1131/view?project=6790c07f0018598d5209&mode=admin", // Replace with your bucket URL
     },
     {
       title: "Electrical Scope",
@@ -86,7 +86,7 @@ const Scope = () => {
         "Connection of junction boxes, Erection of SRCB with foundation",
         "All DC side activities",
       ],
-      imageUrl: "https://cloud.appwrite.io/v1/storage/buckets/6790cdb90012e7e486a9/files/6793a95f00105703073d/view?project=6790c07f0018598d5209&project=6790c07f0018598d5209&mode=admin", // Replace with your bucket URL
+      imageUrl: "https://cloud.appwrite.io/v1/storage/buckets/6791ced30003cf1d6c04/files/67a36b23002d23610ce6/view?project=6790c07f0018598d5209&mode=admin", // Replace with your bucket URL
     },
   ];
 
