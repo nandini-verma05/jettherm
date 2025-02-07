@@ -6,15 +6,16 @@ const BUCKET_ID = "6791ced30003cf1d6c04"; // Replace with your actual bucket ID
 
 // ✅ List of specific logo file IDs stored in Appwrite
 const LOGO_IDS = [
-  "67a2328600201940928b", // Replace with actual Appwrite file IDs
-  "67a2326e00040254dc9f",
-  "67a2325d00036e2103f3",
-  "67a23249003dd8ca0db5",
-  "67a2323a002a2392c564",
-  "67a2322800186d9e68a4",
+  "67a2320d000b19889f45", // Replace with actual Appwrite file IDs 
   "67a23219001581e2d42c",
-  "67a2320d000b19889f45",
-  "67a231fd0030509b8600",
+  "67a2322800186d9e68a4",
+  "67a2323a002a2392c564",
+  "67a23249003dd8ca0db5",
+  "67a2325d00036e2103f3",
+  "67a2326e00040254dc9f",
+  "67a479c8003acbc1e3d6",
+  "67a2328600201940928b",
+  "67a231fd0030509b8600"
 ];
 
 // ✅ Descriptions for each company (should match the number of IDs)
@@ -28,6 +29,7 @@ const DESCRIPTIONS = [
   "VOLTAS LTD",
   "GENSOL",
   "STERLING WILSON",
+  "INFOSYS"
 ];
 
 const Clients = () => {

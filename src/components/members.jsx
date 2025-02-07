@@ -9,7 +9,7 @@ const Card = ({ name, photo, quote }) => (
     <img
       src={photo}
       alt={name}
-      className="h-80 w-full object-cover transition-transform duration-300 group-hover:scale-105"
+      className="h-80 w-full object-contain transition-transform duration-300 group-hover:scale-105"
     />
     <div className="absolute bottom-0 left-0 right-0 p-6 transform transition-transform duration-300">
       <h2 className="text-2xl font-bold text-white mb-2">{name}</h2>

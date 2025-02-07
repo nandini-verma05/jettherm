@@ -31,15 +31,27 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Address */}
+          {/* Address
           <div>
             <h4 className="text-lg font-semibold text-gray-100">Address</h4>
             <p className="text-gray-400 mt-4">
-              Registered Office: Plot No 8/22, Jawahar Nagar, Post - Supela, Bhilai-490023, Dist - Durg, Chhattisgarh - India
+              Registered Office: Plot No 8/22, Jawahar Nagar, Post - Supela, Bhilai-490023, Dist - Durg, Chhattisgarh - India, Email- Jettherm1991@gmail.com, Phone- +917724068116
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
+      {/* Address */}
+<div>
+  <h4 className="text-lg font-semibold text-gray-100">Address</h4>
+  <p className="text-gray-400 mt-4">
+    <strong>Registered Office:</strong> Plot No 8/22, Jawahar Nagar, Post - Supela, Bhilai-490023, Dist - Durg, Chhattisgarh - India,  
+    <strong> Email:</strong> Jettherm1991@gmail.com,  
+    <strong> Phone:</strong> +917724068116
+  </p>
+</div>
+</div>
+</div>
+
 
       {/* Bottom copyright section */}
       <div className="bg-gray-800 py-4 mt-8">
