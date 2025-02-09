@@ -11,8 +11,14 @@ import Clients from './components/clients.jsx';
 import './index.css';
 import ContactForm from './components/contact';
 import Blogs from './components/Blogs';
+import { useEffect } from "react";
 
-const App = () => {
+const App = () =>{
+  
+  useEffect(() => {
+    document.title = "Jetthermsolar";
+  }, []);
+  
   return (
     <div>
       
